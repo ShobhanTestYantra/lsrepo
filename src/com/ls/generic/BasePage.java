@@ -137,5 +137,11 @@ public class BasePage {
 		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
 	
+	public void scrollwithvalue(int value)
+	{
+		String stvalue= "window.scrollBy(0,"+value+")";
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript(stvalue, "");
+	}
 
 }

@@ -1,0 +1,41 @@
+package com.ls.pom.marketing.landingpages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.ls.generic.BasePage;
+
+public class SelectTemplatePage extends BasePage {
+
+	public SelectTemplatePage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+	@FindBy(xpath="//input[@id='Name']")
+	private WebElement LPNameTxtBx;
+	
+	@FindBy(xpath="//input[@id='tag-input-box']")
+	private WebElement AddMarketTagTxtBx;
+	
+	@FindBy(xpath="//div[@title='Real Estate Luxury Apartment']")
+	private WebElement RealEstateImg;
+	
+	@FindBy(xpath="//div[@title='Real Estate Luxury Apartment']/following-sibling::div[contains(.,'SELECT')]")
+	private WebElement RealEstateTemplateSelectBtn;
+	
+	public void selectTemplate()
+	{
+		System.out.println("Entering the Landing Page Name");
+		typeText(LPNameTxtBx, "Landing Page Test 05");
+		System.out.println("Entering the Landing Page Tag");
+		typeText(AddMarketTagTxtBx, "Tag lp 02");
+		System.out.println("MouseOver on the Template");
+		mouseHover(RealEstateImg);
+		System.out.println("click on the select Button over the template");
+		clickElement(RealEstateTemplateSelectBtn);
+			
+	}
+	
+
+}

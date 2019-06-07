@@ -29,7 +29,7 @@ public class LoginPage extends BasePage {
 	 */
 	public void testLogin(String username, String password) {
 		
-		System.out.println("Login to the Application with valid credentails");
+		//System.out.println("Login to the Application with valid credentails");
 		typeText(userNameTxtBx, username);
 		typeText(passwordTxtBx, password);
 		clickElement(loginBtn);

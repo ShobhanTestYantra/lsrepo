@@ -46,7 +46,7 @@ public class LandingPages extends BasePage {
 			System.out.println("Click on create Landing Page Button ");
 			createlpBtn.click();	
 		}
-		public void clickActionSettingIcon()
+		public void mouseoverActionSettingIcon()
 		{  
 			System.out.println("Click on Action Setting Button ");
 			mouseHover(actinsettingIcon);	

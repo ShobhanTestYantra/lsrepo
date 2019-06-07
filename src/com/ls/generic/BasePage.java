@@ -62,26 +62,32 @@ public class BasePage {
 	private WebElement ReportsTab;
 
 	public void hoverToDashboard() {
+		System.out.println("Go to the Dashboard Tab ");
 		mouseHover(dashboardTab);
 	}
 
 	public void hoverToContent() {
+		System.out.println("Go to the Content Tab ");
 		mouseHover(ContentTab);
 	}
 
 	public void hoverToMarketing() {
+		System.out.println("Go to the Marketing Tab ");
 		mouseHover(MarketingTab);
 	}
 
 	public void hoverToLeads() {
+		System.out.println("Go to the Leads Tab ");
 		mouseHover(LeadsTab);
 	}
 
 	public void hoverToWorkflow() {
+		System.out.println("Go to the Workflow Tab ");
 		mouseHover(WorkflowTab);
 	}
 
 	public void hoverToApps() {
+		System.out.println("Go to the Apps Tab  ");
 		mouseHover(AppsTab);
 	}
 
@@ -143,5 +149,7 @@ public class BasePage {
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript(stvalue, "");
 	}
+	
+
 
 }

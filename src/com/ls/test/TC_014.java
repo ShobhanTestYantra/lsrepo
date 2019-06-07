@@ -5,17 +5,14 @@ import org.testng.annotations.Test;
 import com.ls.generic.BaseTest;
 import com.ls.generic.UtilityConstants;
 import com.ls.pom.LoginPage;
-import com.ls.pom.content.imgdocs.ImageLibraryPage;
 
-public class TC_010 extends BaseTest {
-
+public class TC_014 extends BaseTest {
+	
 	@Test
-	public void uploadImageTest() throws InterruptedException {
+	public void uploadImageToFolderTest() throws InterruptedException {
 		LoginPage l1 = new LoginPage(driver);
 		l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
-		ImageLibraryPage i1 = new ImageLibraryPage(driver);
-		i1.hoverToContent();
-		i1.uploadImage();
+		l1.hoverToContent();
 
 	}
 

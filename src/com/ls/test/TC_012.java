@@ -9,7 +9,7 @@ import com.ls.pom.content.imgdocs.ImageLibraryPage;
 
 public class TC_012 extends BaseTest{
 	@Test
-	public void uplaoadImageTest() throws InterruptedException {
+	public void createFolderTest() throws InterruptedException {
 		LoginPage l1 = new LoginPage(driver);
 		l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
 		ImageLibraryPage i1 = new ImageLibraryPage(driver);

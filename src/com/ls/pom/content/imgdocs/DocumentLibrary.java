@@ -38,7 +38,6 @@ public class DocumentLibrary extends BasePage {
 
 	/**
 	 * @author ShobhanKS
-	 * @description upload and verify File present
 	 * @param imagePath
 	 * @throws InterruptedException
 	 * @throws AWTException

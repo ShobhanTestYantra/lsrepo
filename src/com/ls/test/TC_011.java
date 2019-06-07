@@ -10,7 +10,7 @@ import com.ls.pom.content.imgdocs.DocumentLibrary;
 public class TC_011 extends BaseTest{
 	
 	@Test
-	public void uplaoadImageTest() throws InterruptedException {
+	public void uploadFileTest() throws InterruptedException {
 		LoginPage l1 = new LoginPage(driver);
 		l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
 		DocumentLibrary d1 = new DocumentLibrary(driver);

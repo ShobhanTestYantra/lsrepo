@@ -15,6 +15,5 @@ public class TC_012 extends BaseTest{
 		ImageLibraryPage i1 = new ImageLibraryPage(driver);
 		i1.hoverToContent();
 		i1.createAndverifyFolder();
-
 	}
 }

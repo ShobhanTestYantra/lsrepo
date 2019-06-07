@@ -79,6 +79,7 @@ public class ImageLibraryPage extends BasePage {
 		waitUntilLoadedAndVisibilityOfElementLocated(imageIcon);
 		String value = imageIcon.getAttribute("src");
 		String[] arr = value.split("/");
+		System.out.println(" Verifying the file presence");
 		Assert.assertTrue(arr[(arr.length - 1)].contains(imageName), "Uploaded image is not displayed");
 		// Assert.assertTrue(imageIcon.isDisplayed(), "Uploaded image is not displayed"
 		// );
@@ -89,13 +90,16 @@ public class ImageLibraryPage extends BasePage {
 	 * @description create folder and and verify the Toast message
 	 */
 	public void createAndverifyFolder() {
+		
 
 		clickElement(imagesAndDocumentsDrpDwn);
 		waitUntilLoadedAndVisibilityOfElementLocated(manageFoldersBtn);
 		clickElement(manageFoldersBtn);
+		System.out.println("Creating the folder ");
 		clickElement(addFolderBtn);
 		typeText(newFolderTxtBx, "TYSSFolder");
 		clickElement(saveIcon);
+		System.out.println(" Verifying the Toast message");
 		Assert.assertEquals(toastMsg.getText(), "Folder is added successfully.",
 				"Toast message is not Displayed correctly");
 	}

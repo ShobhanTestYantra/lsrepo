@@ -5,6 +5,7 @@ import java.awt.AWTException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import com.ls.generic.BasePage;
 
@@ -20,27 +21,83 @@ public class ImageLibraryPage extends BasePage {
 	@FindBy(xpath = "//a[.='Upload Images']")
 	private WebElement uploadImagesBtn;
 
-	@FindBy(xpath = "//button[contains(.,'Upload')]")
+	@FindBy(xpath = "//div[@class='ajax-upload-dragdrop']/div")
 	private WebElement uploadBtn;
+
+	@FindBy(id = "searchfile")
+	private WebElement searchtxtBx;
+
+	@FindBy(xpath = "//span[@data-tool-component='searchbutton']")
+	private WebElement searchIcon;
+
+	@FindBy(xpath = "(//img[@data-type='thumbnail'])[1]")
+	private WebElement imageIcon;
+
+	@FindBy(xpath = "//a[@onclick='OpenManageFoldersPopup()']")
+	private WebElement manageFoldersBtn;
+
+	@FindBy(xpath = "//span[.='Add folder']")
+	private WebElement addFolderBtn;
+
+	@FindBy(xpath = "//input[@id='NewFolderName']")
+	private WebElement newFolderTxtBx;
+
+	@FindBy(xpath = "//span[@class='icon-save pull-right heading-popover']")
+	private WebElement saveIcon;
+
+	@FindBy(xpath = "//div[@class='alert-message']")
+	private WebElement toastMsg;
 
 	/**
 	 * @author ShobhanKS
 	 * @description upload and verify Image present
 	 * @param imagePath
+	 * @throws InterruptedException
 	 * 
 	 */
-	public void uploadImage(String imagePath) {
-		imagesAndDocumentsDrpDwn.click();
-		uploadImagesBtn.click();
+	public void uploadImage() throws InterruptedException {
+
+		String imagePath = System.getProperty("user.dir") + "\\inputTestData\\Image_Testdata2_JPG.jpg";
+		String imageName = "Image_Testdata2_JPG.jpg";
+		waitUntilLoadedAndVisibilityOfElementLocated(imagesAndDocumentsDrpDwn);
+		clickElement(imagesAndDocumentsDrpDwn);
+		clickElement(uploadImagesBtn);
 		System.out.println("Uploading the Image");
-		waitUntilLoadedAndVisibilityOfElementLocated(uploadBtn);
-		uploadBtn.click();
+		// waitUntilLoadedAndVisibilityOfElementLocated(uploadBtn);
+		Thread.sleep(2000);
+		clickElement(uploadBtn);
 		try {
 			upload(imagePath);
+			Thread.sleep(3000);
 		} catch (InterruptedException | AWTException e) {
 			e.printStackTrace();
+			System.out.println("image is not uploaded");
 		}
+		System.out.println("search the uploaded image is present ");
+		typeText(searchtxtBx, imageName);
+		clickElement(searchIcon);
+		waitUntilLoadedAndVisibilityOfElementLocated(imageIcon);
+		String value = imageIcon.getAttribute("src");
+		String[] arr = value.split("/");
+		Assert.assertTrue(arr[(arr.length - 1)].contains(imageName), "Uploaded image is not displayed");
+		// Assert.assertTrue(imageIcon.isDisplayed(), "Uploaded image is not displayed"
+		// );
+	}
 
+	/**
+	 * @author ShobhanKS
+	 * @description create folder and and verify the Toast message
+	 */
+	public void createAndverifyFolder() {
+
+		clickElement(imagesAndDocumentsDrpDwn);
+		waitUntilLoadedAndVisibilityOfElementLocated(manageFoldersBtn);
+		clickElement(manageFoldersBtn);
+		clickElement(addFolderBtn);
+		typeText(newFolderTxtBx, "TYSSFolder");
+		clickElement(saveIcon);
+		Assert.assertEquals(toastMsg.getText(), "Folder is added successfully.",
+				"Toast message is not Displayed correctly");
 	}
 
 }

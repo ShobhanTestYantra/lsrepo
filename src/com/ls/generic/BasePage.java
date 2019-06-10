@@ -8,6 +8,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,8 +35,8 @@ public class BasePage {
 	}
 
 	// To enter Required String in the textbox
-	public void typeText(WebElement element, String text) {
-		element.sendKeys(text);
+	public void typeText(WebElement element, String string ) {
+		element.sendKeys(string);
 	}
 
 	// ################# Page Methods ######################
@@ -61,6 +62,10 @@ public class BasePage {
 	@FindBy(xpath = "//li[@class='dropdown' and @menu='Reports']/a[contains(.,'Reports')]")
 	private WebElement ReportsTab;
 
+	@FindBy(xpath = "(//ul[@class='mx-top-nav'])[1]")
+	private WebElement ProfileTab;
+
+	
 	public void hoverToDashboard() {
 		System.out.println("Go to the Dashboard Tab ");
 		mouseHover(dashboardTab);

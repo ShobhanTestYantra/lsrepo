@@ -97,10 +97,17 @@ public class BasePage {
 	}
 
 	public void hoverToReports() {
+		System.out.println("Go to the Reports Tab  ");
 		mouseHover(ReportsTab);
 
 	}
 
+	public void hoverToProfileTab() {
+		System.out.println("Go to the Profile Tab  ");
+		mouseHover(ProfileTab);
+
+	}
+	
 	// #################################################################//
 	// Selenium methods
 	public void waitForPageLoaded() {

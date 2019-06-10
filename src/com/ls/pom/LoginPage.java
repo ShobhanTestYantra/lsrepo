@@ -3,6 +3,7 @@ package com.ls.pom;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import com.ls.generic.BasePage;
 
@@ -29,10 +30,12 @@ public class LoginPage extends BasePage {
 	 */
 	public void testLogin(String username, String password) {
 		
-		//System.out.println("Login to the Application with valid credentails");
+		Assert.assertEquals(driver.getTitle(),"LeadSquared Application");
+		System.out.println("Login to the LS Application with valid credentails");
 		typeText(userNameTxtBx, username);
 		typeText(passwordTxtBx, password);
 		clickElement(loginBtn);
+		Assert.assertEquals(driver.getTitle(),"Administrator Dashboard");
 	}
 
 }

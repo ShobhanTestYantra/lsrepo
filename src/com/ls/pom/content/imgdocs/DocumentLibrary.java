@@ -71,6 +71,6 @@ public class DocumentLibrary extends BasePage {
 		String[] arr = value.split("/");
 		System.out.println("Verifying the image presence");
 		Assert.assertTrue(arr[(arr.length - 1)].contains(fileName), "Uploaded file is not displayed");
-
+		System.out.println();
 	}
 }

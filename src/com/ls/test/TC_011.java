@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.ls.generic.BaseTest;
 import com.ls.generic.UtilityConstants;
 import com.ls.pom.LoginPage;
-import com.ls.pom.content.imgdocs.DocumentLibrary;
+import com.ls.pom.content.imgdocs.DocumentLibraryPage;
 
 public class TC_011 extends BaseTest{
 	
@@ -13,7 +13,7 @@ public class TC_011 extends BaseTest{
 	public void uploadFileTest() throws InterruptedException {
 		LoginPage l1 = new LoginPage(driver);
 		l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
-		DocumentLibrary d1 = new DocumentLibrary(driver);
+		DocumentLibraryPage d1 = new DocumentLibraryPage(driver);
 		d1.hoverToContent();
 		d1.uploadFiles();
 	}

@@ -40,7 +40,7 @@ public class LoginPage extends BasePage {
 		if (nextBtn.isDisplayed()) {
 			clickElement(nextBtn);
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -52,7 +52,7 @@ public class LoginPage extends BasePage {
 			clickElement(loginBtn);
 		}
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

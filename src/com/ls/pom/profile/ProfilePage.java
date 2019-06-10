@@ -13,31 +13,35 @@ public class ProfilePage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	@FindBy(xpath = "(//ul[@class='mx-top-nav'])[1]")
-	private WebElement ProfileTab;
+	private WebElement profileTab;
 
-	//tba billing
-	
-	@FindBy(xpath="(//a[contains(.,'Settings')])[2]")
+	@FindBy(xpath = "(//a[contains(.,'Billing')])[1]")
+	private WebElement billingLnk;
+
+	@FindBy(xpath = "(//a[contains(.,'Settings')])[2]")
 	private WebElement settingsLnk;
-	
-	//tba logout
-	
+
+	@FindBy(xpath = "(//a[contains(.,' Sign Out')])[1]")
+	private WebElement signOutLnk;
+
 	public void hoverToProfileTab() {
 		System.out.println("Go to the Profile Tab  ");
-		mouseHover(ProfileTab);
-
+		mouseHover(profileTab);
 	}
-	
-	//tba billing
-	
-	public void clickSettings() {
+
+	public void clkbillingLnk() {
+		System.out.println("Go to the Profile Tab  ");
+		clickElement(billingLnk);
+	}
+
+	public void clkSettingsLnk() {
+		System.out.println("click on Settings Link");
 		clickElement(settingsLnk);
 	}
-	
-	//tba logout
-	
-	
-	
+
+	public void clkSignOutLnk() {
+		System.out.println("click on SignOut Link");
+		clickElement(signOutLnk);
+	}
 }

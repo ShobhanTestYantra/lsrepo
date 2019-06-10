@@ -27,6 +27,10 @@ public class BuildLandingPage extends BasePage {
 	@FindBy(xpath="//button[@id='GotoList']")
 	private WebElement getListBtn;
 	
+	@FindBy(xpath="//div[@id='http-lp-url']/descendant::a")
+	private WebElement confirmurlLnk;
+
+	
 	public void clickpublishBtn(int value)
 	{
 	System.out.println("Scroll down to the publish button");
@@ -58,6 +62,14 @@ public class BuildLandingPage extends BasePage {
 	clickElement(getListBtn);
 	
 	}
+	public void clickconfirmUrl()
+	{
+	System.out.println("click on confirm Url Lnk");
+
+	clickElement(confirmurlLnk);
+	
+	}
+
 	
 	
 	

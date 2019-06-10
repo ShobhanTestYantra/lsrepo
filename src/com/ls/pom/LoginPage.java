@@ -22,20 +22,31 @@ public class LoginPage extends BasePage {
 		super(driver);
 	}
 
+	@FindBy(xpath = "//button[contains(.,'Next')]")
+	private WebElement nextBtn;
+
 	/**
 	 * @author ShobhanKS
-	 * @description Logging to the Application 
+	 * @description Logging to the Application
 	 * @param username
 	 * @param password
 	 */
 	public void testLogin(String username, String password) {
-		
-		Assert.assertEquals(driver.getTitle(),"LeadSquared Application");
+
+		Assert.assertEquals(driver.getTitle(), "LeadSquared Application");
 		System.out.println("Login to the LS Application with valid credentails");
 		typeText(userNameTxtBx, username);
-		typeText(passwordTxtBx, password);
-		clickElement(loginBtn);
-		Assert.assertEquals(driver.getTitle(),"Administrator Dashboard");
+	
+		if (nextBtn.isDisplayed()) {
+			clickElement(nextBtn);
+			typeText(passwordTxtBx, password);
+			clickElement(nextBtn);
+		} else {
+			typeText(passwordTxtBx, password);
+			clickElement(loginBtn);
+		}
+
+		Assert.assertEquals(driver.getTitle(), "Administrator Dashboard");
 	}
 
 }

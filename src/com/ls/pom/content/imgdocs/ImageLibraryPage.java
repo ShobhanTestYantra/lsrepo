@@ -82,30 +82,37 @@ public class ImageLibraryPage extends BasePage {
 	 * 
 	 */
 	public void uploadImage() throws InterruptedException {
-
 	
+		System.out.println("Selecting \"Images And Documents \" from the Content Tab ");
 		waitUntilLoadedAndVisibilityOfElementLocated(imagesAndDocumentsDrpDwn);
 		clickElement(imagesAndDocumentsDrpDwn);
+		System.out.println("Verifying  user is in  \"Images And Documents \" Page ");
+		Assert.assertEquals(driver.getTitle(),"Images and Documents");
+		if(NoImagesFoundTxt.isDisplayed()) 
+		{
 		Assert.assertEquals(NoImagesFoundTxt.getText(), blankpagetxt);
+		}
+		System.out.println("Select and Upload the Image  ");
 		clickElement(uploadImagesBtn);
-		System.out.println("Uploading the Image");
 		// waitUntilLoadedAndVisibilityOfElementLocated(uploadBtn);
 		Thread.sleep(2000);
 		clickElement(uploadBtn);
 		try {
+			System.out.println("Uploading the Image...");
 			upload(imagePath);
 			Thread.sleep(3000);
 		} catch (InterruptedException | AWTException e) {
 			e.printStackTrace();
-			System.out.println("image is not uploaded");
+			System.out.println("Uploading Image is unsuccessfull");
 		}
-		System.out.println("search the uploaded image is present ");
 //		typeText(searchtxtBx, imageName);
 //		clickElement(searchIcon);
+		System.out.println("Checking for uploaded Image ");
 		waitUntilLoadedAndVisibilityOfElementLocated(imageIcon);
 		String value = imageIcon.getAttribute("src");
 		String[] arr = value.split("/");
-		System.out.println(" Verifying the file presence");
+		System.out.println(arr);
+		System.out.println(imageName);
 		Assert.assertTrue(arr[(arr.length - 1)].contains(imageName), "Uploaded image is not displayed");
 		// Assert.assertTrue(imageIcon.isDisplayed(), "Uploaded image is not displayed"
 		// );
@@ -117,19 +124,28 @@ public class ImageLibraryPage extends BasePage {
 	 */
 	public void createAndverifyFolder() {
 		
+		System.out.println("Selecting \"Images And Documents \" from the Content Tab ");
 		clickElement(imagesAndDocumentsDrpDwn);
+		Assert.assertEquals(driver.getTitle(),"Images and Documents");
+		
+		System.out.println("Clicking on the \"Manage Folders\" Button");
 		waitUntilLoadedAndVisibilityOfElementLocated(manageFoldersBtn);
 		clickElement(manageFoldersBtn);
-		System.out.println("Creating the folder ");
+		
+		System.out.println("Creating New folder ");
 		clickElement(addFolderBtn);
 		typeText(newFolderTxtBx, "TYSSFolder");
+		
+		System.out.println("Clicking on \"Save\" Icon ");
 		clickElement(saveIcon);
-		System.out.println(" Verifying the Toast message");
+		
+		System.out.println("Verifying The Toast message");
 		Assert.assertEquals(toastMsg.getText(), "Folder is added successfully.",
 				"Toast message is not Displayed correctly");
+		System.out.println("Toast message Is "+toastMsg.getText() );
+		
 	}
 
-	
 	/**
 	 * @author ShobhanKS
 	 * @throws InterruptedException 
@@ -137,41 +153,58 @@ public class ImageLibraryPage extends BasePage {
 	 */
 	public void createFolderUploadImage() throws InterruptedException {
 		
+		System.out.println("Selecting \"Images And Documents \" from the Content Tab ");
 		clickElement(imagesAndDocumentsDrpDwn);
+		Assert.assertEquals(driver.getTitle(),"Images and Documents");
+		
+		System.out.println("Clicking on the \"Manage Folders\" Button");
 		waitUntilLoadedAndVisibilityOfElementLocated(manageFoldersBtn);
 		clickElement(manageFoldersBtn);
-		System.out.println("Creating the folder ");
+		
+		System.out.println("Creating New folder ");
 		clickElement(addFolderBtn);
 		typeText(newFolderTxtBx, folderName );
+		
+		System.out.println("Clicking on \"Save\" Icon ");
 		clickElement(saveIcon);
-		System.out.println("Verifying the Toast message");
+		
+		
+		System.out.println("Verifying The Toast message");
+		Assert.assertEquals(toastMsg.getText(), "Folder is added successfully.",
+				"Toast message is not Displayed correctly");
+		System.out.println("Toast message Is "+toastMsg.getText() );
+		
+		System.out.println("Click on Close");
 		clickElement(closeLnk);
+		
+		System.out.println("Select the Created Folder ");
 		clickElement(addFolderDrpDwn);
 		clickElement(selectOption(folderName));
+		
+		System.out.println("Click on Upload Button");
 		clickElement(uploadImagesBtn);
-		System.out.println("Uploading the Image");
+
 		// waitUntilLoadedAndVisibilityOfElementLocated(uploadBtn);
 		Thread.sleep(2000);
 		clickElement(uploadBtn);
 		try {
+			System.out.println("Uploading the Image");
 			upload(imagePath);
 			Thread.sleep(3000);
 		} catch (InterruptedException | AWTException e) {
 			e.printStackTrace();
-			System.out.println("image is not uploaded");
+			System.out.println("Uploading Image is unsuccessfull");
 		}
-		System.out.println("search the uploaded image is present ");
+		
 //		typeText(searchtxtBx, imageName);
 //		clickElement(searchIcon);
+		System.out.println("Checking for uploaded Image ");
 		waitUntilLoadedAndVisibilityOfElementLocated(imageIcon);
 		String value = imageIcon.getAttribute("src");
 		String[] arr = value.split("/");
+		System.out.println(arr);
+		System.out.println(imageName);
 		System.out.println("Verifying the file presence");
 		Assert.assertTrue(arr[(arr.length - 1)].contains(imageName), "Uploaded image is not displayed");
-	
 	}
-	
-
-
-	
 }

@@ -10,9 +10,9 @@ import com.ls.pom.marketing.landingpages.BuildLandingPage;
 import com.ls.pom.marketing.landingpages.LandingPages;
 import com.ls.pom.marketing.landingpages.SelectTemplatePage;
 
-public class TC_009 extends BaseTest {
+public class TC_006  extends BaseTest{
 	@Test
-	public void testUnpublish() throws Exception
+	public void testAccessLandingPage() throws Exception
 	{
 	LoginPage l1 = new LoginPage(driver);
 	Reporter.log("Enter Email.id  and password in the login page",true);
@@ -32,8 +32,8 @@ public class TC_009 extends BaseTest {
 	SelectTemplatePage sp=new SelectTemplatePage(driver);
 	Reporter.log("Selecting the Landing Template",true);
 	Thread.sleep(3000);
-	String lpname="Landing page 01";
-	String tagname="tag 01";
+	String lpname="Landing page 02";
+	String tagname="tag 03";
 	sp.selectTemplate(lpname,tagname);
 	Thread.sleep(3000);
 	BuildLandingPage bp=new BuildLandingPage(driver);
@@ -41,11 +41,8 @@ public class TC_009 extends BaseTest {
 	bp.clickpublishBtn(700);
 	Thread.sleep(3000);
 	bp.clickconfirmpublishBtn();
-	bp.clickGetListBtn();
-	Thread.sleep(3000);
-	String emsg="Finished unpublishing landing pages. 1 successful. 0 failed.";
-	lp1.mouseoverActionSettingIcon();
-	lp1.verifyUnpublish(emsg);
+	bp.clickconfirmUrl();
+	
 	
 	}
 }

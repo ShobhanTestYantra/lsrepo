@@ -3,6 +3,7 @@ package com.ls.pom.marketing.landingpages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import com.ls.generic.BasePage;
 
@@ -22,6 +23,16 @@ public class LandingPages extends BasePage {
 		
 		@FindBy(xpath="//button[@class='dropdown-toggle settings-icon']")
 		private WebElement actinsettingIcon;
+		
+		@FindBy(xpath="//ul[@class='dropdown-menu']/descendant::a[text()='UnPublish']")
+		private WebElement unpublishIcon;
+		
+		@FindBy(xpath="//div[@class='modal-footer']/button[text()='Unpublish']")
+		private WebElement unpublishBtn;
+		
+		@FindBy(xpath="//div[@id='ConfirmPopupBody']/descendant::div[@id='FinishMessage']")
+		private WebElement unpublishMsg;
+		//div[@id='ConfirmPopupBody']/descendant::div[@id='FinishMessage']
 		/**
 		 * @author Shreya
 		 * @description Clicking on the  landing Page in DropDown
@@ -52,7 +63,17 @@ public class LandingPages extends BasePage {
 			mouseHover(actinsettingIcon);	
 		}
 	
-
+		public void verifyUnpublish(String emsg) throws Exception
+		
+		{ 
+			System.out.println("Click on Action Setting Button ");
+			clickElement(unpublishIcon);
+			clickElement(unpublishBtn);
+			Thread.sleep(3000);
+			String amsg=unpublishMsg.getText();
+			Thread.sleep(3000);
+			Assert.assertEquals(amsg, emsg);
+		}
 
 
 }

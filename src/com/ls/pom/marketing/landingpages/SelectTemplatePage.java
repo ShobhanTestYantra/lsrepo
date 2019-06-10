@@ -24,12 +24,12 @@ public class SelectTemplatePage extends BasePage {
 	@FindBy(xpath="//div[@title='Real Estate Luxury Apartment']/following-sibling::div[contains(.,'SELECT')]")
 	private WebElement RealEstateTemplateSelectBtn;
 	
-	public void selectTemplate()
+	public void selectTemplate(String lpname,String tagname)
 	{
 		System.out.println("Entering the Landing Page Name");
-		typeText(LPNameTxtBx, "Landing Page Test 05");
+		typeText(LPNameTxtBx, lpname);
 		System.out.println("Entering the Landing Page Tag");
-		typeText(AddMarketTagTxtBx, "Tag lp 02");
+		typeText(AddMarketTagTxtBx, tagname);
 		System.out.println("MouseOver on the Template");
 		mouseHover(RealEstateImg);
 		System.out.println("click on the select Button over the template");

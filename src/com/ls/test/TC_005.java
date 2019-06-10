@@ -34,7 +34,9 @@ public class TC_005 extends BaseTest{
 		SelectTemplatePage sp=new SelectTemplatePage(driver);
 		Reporter.log("Selecting the Landing Template",true);
 		Thread.sleep(3000);
-		sp.selectTemplate();
+		String lpname="Landing page 04";
+		String tagname="tag 06";
+		sp.selectTemplate(lpname,tagname);
 		Thread.sleep(3000);
 		BuildLandingPage bp=new BuildLandingPage(driver);
 		Thread.sleep(3000);

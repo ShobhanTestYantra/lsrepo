@@ -49,16 +49,16 @@ public class BasePage {
 	@FindBy(xpath = "//li[@class='dropdown' and @menu='Marketing']/a[contains(.,'Marketing')]")
 	private WebElement MarketingTab;
 
-	@FindBy(xpath = "//li[@class='dropdown open' and @menu='Leads']/a[contains(.,'Leads')]")
+	@FindBy(xpath = "//li[@class='dropdown' and @menu='Leads']/a[contains(.,'Leads')]")
 	private WebElement LeadsTab;
 
-	@FindBy(xpath = "//li[@class='dropdown open' and @menu='Workflow']/a[contains(.,'Workflow')]")
+	@FindBy(xpath = "//li[@class='dropdown' and @menu='Workflow']/a[contains(.,'Workflow')]")
 	private WebElement WorkflowTab;
 
-	@FindBy(xpath = "//li[@class='dropdown open' and @menu='Apps']/a[contains(.,'Apps')]")
+	@FindBy(xpath = "//li[@class='dropdown' and @menu='Apps']/a[contains(.,'Apps')]")
 	private WebElement AppsTab;
 
-	@FindBy(xpath = "//li[@class='dropdown open' and @menu='Reports']/a[contains(.,'Reports')]")
+	@FindBy(xpath = "//li[@class='dropdown' and @menu='Reports']/a[contains(.,'Reports')]")
 	private WebElement ReportsTab;
 
 	public void hoverToDashboard() {

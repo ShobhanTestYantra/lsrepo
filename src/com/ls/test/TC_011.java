@@ -7,8 +7,8 @@ import com.ls.generic.UtilityConstants;
 import com.ls.pom.LoginPage;
 import com.ls.pom.content.imgdocs.DocumentLibraryPage;
 
-public class TC_011 extends BaseTest{
-	
+public class TC_011 extends BaseTest {
+
 	@Test
 	public void uploadFileTest() throws InterruptedException {
 		LoginPage l1 = new LoginPage(driver);
@@ -17,5 +17,4 @@ public class TC_011 extends BaseTest{
 		d1.hoverToContent();
 		d1.uploadFiles();
 	}
-
 }

@@ -39,6 +39,12 @@ public class LoginPage extends BasePage {
 	
 		if (nextBtn.isDisplayed()) {
 			clickElement(nextBtn);
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			typeText(passwordTxtBx, password);
 			clickElement(nextBtn);
 		} else {

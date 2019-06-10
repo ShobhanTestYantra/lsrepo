@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30007" started-at="2019-06-07T06:20:54Z" finished-at="2019-06-07T06:21:24Z">
+  <suite name="Default suite" duration-ms="45537" started-at="2019-06-10T11:55:12Z" finished-at="2019-06-10T11:55:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30007" started-at="2019-06-07T06:20:54Z" finished-at="2019-06-07T06:21:24Z">
-      <class name="com.ls.test.TC">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ls.test.TC@1d057a39]" name="beforeMethod" is-config="true" duration-ms="8944" started-at="2019-06-07T06:20:54Z" finished-at="2019-06-07T06:21:03Z">
+    <test name="Default test" duration-ms="45537" started-at="2019-06-10T11:55:12Z" finished-at="2019-06-10T11:55:57Z">
+      <class name="com.ls.test.TC_029">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.ls.test.TC_029@1d057a39]" name="beforeMethod" is-config="true" duration-ms="7745" started-at="2019-06-10T11:55:12Z" finished-at="2019-06-10T11:55:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="name2()[pri:0, instance:com.ls.test.TC@1d057a39]" name="name2" duration-ms="20794" started-at="2019-06-07T06:21:03Z" finished-at="2019-06-07T06:21:24Z">
+        <test-method status="PASS" signature="createTask()[pri:0, instance:com.ls.test.TC_029@1d057a39]" name="createTask" duration-ms="35688" started-at="2019-06-10T11:55:19Z" finished-at="2019-06-10T11:55:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- name2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.ls.test.TC@1d057a39]" name="afterMethod" is-config="true" duration-ms="248" started-at="2019-06-07T06:21:24Z" finished-at="2019-06-07T06:21:24Z">
+        </test-method> <!-- createTask -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.ls.test.TC_029@1d057a39]" name="afterMethod" is-config="true" duration-ms="2084" started-at="2019-06-10T11:55:55Z" finished-at="2019-06-10T11:55:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.ls.test.TC -->
+      </class> <!-- com.ls.test.TC_029 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

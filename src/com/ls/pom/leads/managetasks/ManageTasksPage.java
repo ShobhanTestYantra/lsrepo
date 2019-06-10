@@ -1,7 +1,5 @@
 package com.ls.pom.leads.managetasks;
 
-import java.util.List;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +12,6 @@ public class ManageTasksPage extends BasePage {
 
 	public ManageTasksPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	@FindBy(xpath = "//li/a[contains(.,'Manage Tasks')]")
@@ -35,8 +32,7 @@ public class ManageTasksPage extends BasePage {
 	@FindBy(xpath = "//label[@title='Subject']/../..//input")
 	private WebElement subjectTxtBx;
 
-	@FindBy(xpath = "//label[@title='Location']/../..//input"
-			+ "")
+	@FindBy(xpath = "//label[@title='Location']/../..//input" + "")
 	private WebElement locationTxtBx;
 
 	@FindBy(xpath = "//label[@title='Description']/../..//textarea")
@@ -48,10 +44,9 @@ public class ManageTasksPage extends BasePage {
 	@FindBy(xpath = "//button[.='Save']")
 	private WebElement saveBtn;
 
-	@FindBy(xpath="//div[@class='alert-message']")
+	@FindBy(xpath = "//div[@class='alert-message']")
 	private WebElement toastMsg;
-	
-	
+
 	/**
 	 * @author ShobhanKS
 	 * @description Clicking on the Task dropdown
@@ -68,7 +63,7 @@ public class ManageTasksPage extends BasePage {
 	 * @author ShobhanKS
 	 * @desription Creating New Task
 	 * @param leadName
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 */
 	public void createTask(String leadName) throws InterruptedException {
 		System.out.println("Clicking on the Create Task button");

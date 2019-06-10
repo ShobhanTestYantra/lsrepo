@@ -45,19 +45,7 @@ public class TC_005 extends BaseTest{
 		bp.clickconfirmpublishBtn();
 		Thread.sleep(3000);
 		String emsg="Finished publishing landing page. 1 successful. 0 failed.";
-		bp.verifymessage(emsg);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-				
-		
-		
+		bp.verifymessage(emsg);		
 	}
 
 }

@@ -12,24 +12,22 @@ import org.testng.Assert;
 import com.ls.generic.BasePage;
 
 public class ImageLibraryPage extends BasePage {
-  
+
 	String blankpagetxt = "No images found.";
-	String folderName=	"TYSSFolder2";
+	String folderName = "TYSSFolder2";
 	String imagePath = System.getProperty("user.dir") + "\\inputTestData\\Image_Testdata2_JPG.jpg";
 	String imageName = "Image_Testdata2_JPG.jpg";
-	
-		
+
 	public ImageLibraryPage(WebDriver driver) {
 		super(driver);
 	}
 
 	@FindBy(xpath = "//a[.=' Images & Documents']")
 	private WebElement imagesAndDocumentsDrpDwn;
-	
-	
+
 	@FindBy(xpath = "//div[@class='no-item']/h3[1]")
-	private WebElement NoImagesFoundTxt ;
-	
+	private WebElement NoImagesFoundTxt;
+
 	@FindBy(xpath = "//a[.='Upload Images']")
 	private WebElement uploadImagesBtn;
 
@@ -60,20 +58,17 @@ public class ImageLibraryPage extends BasePage {
 	@FindBy(xpath = "//div[@class='alert-message']")
 	private WebElement toastMsg;
 
-	
 	@FindBy(xpath = "//a[@class='close-link']")
 	private WebElement closeLnk;
-		
+
 	@FindBy(xpath = "//span[contains(.,'All folders') and @class='ui-selectmenu-status']")
 	private WebElement addFolderDrpDwn;
-		
-	public WebElement selectOption(String value)
-	{
-		String xpath="//li[@role='presentation']/a[.='"+value+"']";
-		return  driver.findElement(By.xpath(xpath));
+
+	public WebElement selectOption(String value) {
+		String xpath = "//li[@role='presentation']/a[.='" + value + "']";
+		return driver.findElement(By.xpath(xpath));
 	}
-	
-	
+
 	/**
 	 * @author ShobhanKS
 	 * @description upload and verify Image present
@@ -82,15 +77,14 @@ public class ImageLibraryPage extends BasePage {
 	 * 
 	 */
 	public void uploadImage() throws InterruptedException {
-	
+
 		System.out.println("Selecting \"Images And Documents \" from the Content Tab ");
 		waitUntilLoadedAndVisibilityOfElementLocated(imagesAndDocumentsDrpDwn);
 		clickElement(imagesAndDocumentsDrpDwn);
 		System.out.println("Verifying  user is in  \"Images And Documents \" Page ");
-		Assert.assertEquals(driver.getTitle(),"Images and Documents");
-		if(NoImagesFoundTxt.isDisplayed()) 
-		{
-		Assert.assertEquals(NoImagesFoundTxt.getText(), blankpagetxt);
+		Assert.assertEquals(driver.getTitle(), "Images and Documents");
+		if (NoImagesFoundTxt.isDisplayed()) {
+			Assert.assertEquals(NoImagesFoundTxt.getText(), blankpagetxt);
 		}
 		System.out.println("Select and Upload the Image  ");
 		clickElement(uploadImagesBtn);
@@ -123,66 +117,64 @@ public class ImageLibraryPage extends BasePage {
 	 * @description create folder and and verify the Toast message
 	 */
 	public void createAndverifyFolder() {
-		
+
 		System.out.println("Selecting \"Images And Documents \" from the Content Tab ");
 		clickElement(imagesAndDocumentsDrpDwn);
-		Assert.assertEquals(driver.getTitle(),"Images and Documents");
-		
+		Assert.assertEquals(driver.getTitle(), "Images and Documents");
+
 		System.out.println("Clicking on the \"Manage Folders\" Button");
 		waitUntilLoadedAndVisibilityOfElementLocated(manageFoldersBtn);
 		clickElement(manageFoldersBtn);
-		
+
 		System.out.println("Creating New folder ");
 		clickElement(addFolderBtn);
 		typeText(newFolderTxtBx, "TYSSFolder");
-		
+
 		System.out.println("Clicking on \"Save\" Icon ");
 		clickElement(saveIcon);
-		
+
 		System.out.println("Verifying The Toast message");
 		Assert.assertEquals(toastMsg.getText(), "Folder is added successfully.",
 				"Toast message is not Displayed correctly");
-		System.out.println("Toast message Is "+toastMsg.getText() );
-		
+		System.out.println("Toast message Is " + toastMsg.getText());
+
 	}
 
 	/**
 	 * @author ShobhanKS
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 * @description create folder and and verify the Toast message
 	 */
 	public void createFolderUploadImage() throws InterruptedException {
-		
+
 		System.out.println("Selecting \"Images And Documents \" from the Content Tab ");
 		clickElement(imagesAndDocumentsDrpDwn);
-		Assert.assertEquals(driver.getTitle(),"Images and Documents");
-		
+		Assert.assertEquals(driver.getTitle(), "Images and Documents");
+
 		System.out.println("Clicking on the \"Manage Folders\" Button");
 		waitUntilLoadedAndVisibilityOfElementLocated(manageFoldersBtn);
 		clickElement(manageFoldersBtn);
-		
+
 		System.out.println("Creating New folder ");
 		clickElement(addFolderBtn);
-		typeText(newFolderTxtBx, folderName );
-		
+		typeText(newFolderTxtBx, folderName);
+
 		System.out.println("Clicking on \"Save\" Icon ");
 		clickElement(saveIcon);
-		
-		
+
 		System.out.println("Verifying The Toast message");
 		Assert.assertEquals(toastMsg.getText(), "Folder is added successfully.",
 				"Toast message is not Displayed correctly");
-		System.out.println("Toast message Is "+toastMsg.getText() );
-		
+		System.out.println("Toast message Is " + toastMsg.getText());
+
 		System.out.println("Click on Close");
 		clickElement(closeLnk);
-		
+
 		System.out.println("Select the Created Folder ");
 		clickElement(addFolderDrpDwn);
 		clickElement(selectOption(folderName));
-		if(NoImagesFoundTxt.isDisplayed()) 
-		{
-		Assert.assertEquals(NoImagesFoundTxt.getText(), blankpagetxt);
+		if (NoImagesFoundTxt.isDisplayed()) {
+			Assert.assertEquals(NoImagesFoundTxt.getText(), blankpagetxt);
 		}
 		System.out.println("Click on Upload Button");
 		clickElement(uploadImagesBtn);
@@ -198,7 +190,7 @@ public class ImageLibraryPage extends BasePage {
 			e.printStackTrace();
 			System.out.println("Uploading Image is unsuccessfull");
 		}
-		
+
 //		typeText(searchtxtBx, imageName);
 //		clickElement(searchIcon);
 		System.out.println("Checking for uploaded Image ");

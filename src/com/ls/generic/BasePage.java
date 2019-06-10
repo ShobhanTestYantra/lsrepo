@@ -8,7 +8,6 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,7 +34,7 @@ public class BasePage {
 	}
 
 	// To enter Required String in the textbox
-	public void typeText(WebElement element, String string ) {
+	public void typeText(WebElement element, String string) {
 		element.sendKeys(string);
 	}
 
@@ -61,7 +60,6 @@ public class BasePage {
 
 	@FindBy(xpath = "//li[@class='dropdown' and @menu='Reports']/a[contains(.,'Reports')]")
 	private WebElement ReportsTab;
-
 
 	public void hoverToDashboard() {
 		System.out.println("Go to the Dashboard Tab ");
@@ -99,8 +97,6 @@ public class BasePage {
 
 	}
 
-	
-	
 	// #################################################################//
 	// Selenium methods
 	public void waitForPageLoaded() {
@@ -129,7 +125,7 @@ public class BasePage {
 		action.moveToElement(element).build().perform();
 
 	}
-	
+
 	public void upload(String imagePath) throws InterruptedException, AWTException {
 		StringSelection stringSelection = new StringSelection(imagePath);
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -147,14 +143,11 @@ public class BasePage {
 		Thread.sleep(2000);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
-	
-	public void scrollwithvalue(int value)
-	{
-		String stvalue= "window.scrollBy(0,"+value+")";
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
+
+	public void scrollwithvalue(int value) {
+		String stvalue = "window.scrollBy(0," + value + ")";
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript(stvalue, "");
 	}
-	
-
 
 }

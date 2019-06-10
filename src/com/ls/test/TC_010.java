@@ -16,7 +16,5 @@ public class TC_010 extends BaseTest {
 		ImageLibraryPage i1 = new ImageLibraryPage(driver);
 		i1.hoverToContent();
 		i1.uploadImage();
-
 	}
-
 }

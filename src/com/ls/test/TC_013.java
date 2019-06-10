@@ -17,5 +17,4 @@ public class TC_013 extends BaseTest {
 		i1.hoverToContent();
 		i1.createFolderUploadImage();
 	}
-
 }

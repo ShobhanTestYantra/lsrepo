@@ -58,7 +58,7 @@ public class BaseTest {
 	@BeforeMethod
 	public void beforeMethod() {
 		ChromeOptions options = new ChromeOptions();
-		//Add chrome switch to disable notification - "**--disable-notifications**"
+		// Add chrome switch to disable notification - "**--disable-notifications**"
 		options.addArguments("--disable-notifications");
 		System.out.println("open the browser");
 		System.setProperty(UtilityConstants.CHROME_KEY, UtilityConstants.CHROME_PATH);

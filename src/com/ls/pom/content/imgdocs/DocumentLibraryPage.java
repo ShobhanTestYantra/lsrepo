@@ -13,7 +13,6 @@ public class DocumentLibraryPage extends BasePage {
 
 	public DocumentLibraryPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	@FindBy(xpath = "//a[.=' Images & Documents']")

@@ -10,22 +10,21 @@ public class SelectTemplatePage extends BasePage {
 
 	public SelectTemplatePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
-	@FindBy(xpath="//input[@id='Name']")
+
+	@FindBy(xpath = "//input[@id='Name']")
 	private WebElement LPNameTxtBx;
-	
-	@FindBy(xpath="//input[@id='tag-input-box']")
+
+	@FindBy(xpath = "//input[@id='tag-input-box']")
 	private WebElement AddMarketTagTxtBx;
-	
-	@FindBy(xpath="//div[@title='Real Estate Luxury Apartment']")
+
+	@FindBy(xpath = "//div[@title='Real Estate Luxury Apartment']")
 	private WebElement RealEstateImg;
-	
-	@FindBy(xpath="//div[@title='Real Estate Luxury Apartment']/following-sibling::div[contains(.,'SELECT')]")
+
+	@FindBy(xpath = "//div[@title='Real Estate Luxury Apartment']/following-sibling::div[contains(.,'SELECT')]")
 	private WebElement RealEstateTemplateSelectBtn;
-	
-	public void selectTemplate(String lpname,String tagname)
-	{
+
+	public void selectTemplate(String lpname, String tagname) {
 		System.out.println("Entering the Landing Page Name");
 		typeText(LPNameTxtBx, lpname);
 		System.out.println("Entering the Landing Page Tag");
@@ -34,8 +33,7 @@ public class SelectTemplatePage extends BasePage {
 		mouseHover(RealEstateImg);
 		System.out.println("click on the select Button over the template");
 		clickElement(RealEstateTemplateSelectBtn);
-			
+
 	}
-	
 
 }

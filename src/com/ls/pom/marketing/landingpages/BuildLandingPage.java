@@ -14,64 +14,57 @@ public class BuildLandingPage extends BasePage {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
-	@FindBy(xpath="//button[text()='Publish']")
+
+	@FindBy(xpath = "//button[text()='Publish']")
 	private WebElement publishBtn;
-	
-	@FindBy(id="ButtonOk")
+
+	@FindBy(id = "ButtonOk")
 	private WebElement publishconfirmBtn;
-	
-	@FindBy(xpath="//div[@id='ConfirmPopupBody']/descendant::div[@id='FinishMessage']")
+
+	@FindBy(xpath = "//div[@id='ConfirmPopupBody']/descendant::div[@id='FinishMessage']")
 	private WebElement aMsg;
-	
-	@FindBy(xpath="//button[@id='GotoList']")
+
+	@FindBy(xpath = "//button[@id='GotoList']")
 	private WebElement getListBtn;
-	
-	@FindBy(xpath="//div[@id='http-lp-url']/descendant::a")
+
+	@FindBy(xpath = "//div[@id='http-lp-url']/descendant::a")
 	private WebElement confirmurlLnk;
 
-	
-	public void clickpublishBtn(int value)
-	{
-	System.out.println("Scroll down to the publish button");
-	scrollwithvalue(value);
-	System.out.println("click on  publish button");
-	clickElement(publishBtn);
+	public void clickpublishBtn(int value) {
+		System.out.println("Scroll down to the publish button");
+		scrollwithvalue(value);
+		System.out.println("click on  publish button");
+		clickElement(publishBtn);
 	}
-	public void clickconfirmpublishBtn()
-	{
-	System.out.println("click on confirm publish");
 
-	clickElement(publishconfirmBtn);
+	public void clickconfirmpublishBtn() {
+		System.out.println("click on confirm publish");
+
+		clickElement(publishconfirmBtn);
 	}
-	
-	public void verifymessage(String emsg) throws Exception
-	{
+
+	public void verifymessage(String emsg) throws Exception {
 
 		Reporter.log("Verify the confirmation Message");
 		Thread.sleep(3000);
-		String amsg=aMsg.getText();
+		String amsg = aMsg.getText();
 		Thread.sleep(3000);
 		Assert.assertEquals(amsg, emsg);
-		
-	}
-	public void clickGetListBtn()
-	{
-	System.out.println("click on confirm publish");
 
-	clickElement(getListBtn);
-	
-	}
-	public void clickconfirmUrl()
-	{
-	System.out.println("click on confirm Url Lnk");
-
-	clickElement(confirmurlLnk);
-	
 	}
 
-	
-	
-	
+	public void clickGetListBtn() {
+		System.out.println("click on confirm publish");
+
+		clickElement(getListBtn);
+
+	}
+
+	public void clickconfirmUrl() {
+		System.out.println("click on confirm Url Lnk");
+
+		clickElement(confirmurlLnk);
+
+	}
 
 }

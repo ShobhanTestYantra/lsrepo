@@ -36,7 +36,7 @@ public class LoginPage extends BasePage {
 		Assert.assertEquals(driver.getTitle(), "LeadSquared Application");
 		System.out.println("Login to the LS Application with valid credentails");
 		typeText(userNameTxtBx, username);
-	
+
 		if (nextBtn.isDisplayed()) {
 			clickElement(nextBtn);
 			try {

@@ -55,6 +55,7 @@ public class DocumentLibrary extends BasePage {
 		Thread.sleep(2000);
 
 		try {
+			System.out.println(" Uploading File...");
 			upload(filePath);
 			
 		} catch (InterruptedException | AWTException e) {
@@ -63,14 +64,13 @@ public class DocumentLibrary extends BasePage {
 			System.out.println("File is not uploaded");
 		}
 		Thread.sleep(10000);
-		System.out.println("search the uploaded file is present ");
-		typeText(searchtxtBx, fileName);
-		clickElement(searchIcon);
+//		typeText(searchtxtBx, fileName);
+//		clickElement(searchIcon);
+		System.out.println("Checking for uploaded File ");
 		waitUntilLoadedAndVisibilityOfElementLocated(fileIcon);
 		String value = fileIcon.getText();
 		String[] arr = value.split("/");
-		System.out.println("Verifying the image presence");
+		System.out.println("Verifying the File  presence");
 		Assert.assertTrue(arr[(arr.length - 1)].contains(fileName), "Uploaded file is not displayed");
-		System.out.println();
 	}
 }

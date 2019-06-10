@@ -180,7 +180,10 @@ public class ImageLibraryPage extends BasePage {
 		System.out.println("Select the Created Folder ");
 		clickElement(addFolderDrpDwn);
 		clickElement(selectOption(folderName));
-		
+		if(NoImagesFoundTxt.isDisplayed()) 
+		{
+		Assert.assertEquals(NoImagesFoundTxt.getText(), blankpagetxt);
+		}
 		System.out.println("Click on Upload Button");
 		clickElement(uploadImagesBtn);
 
@@ -204,7 +207,7 @@ public class ImageLibraryPage extends BasePage {
 		String[] arr = value.split("/");
 		System.out.println(arr);
 		System.out.println(imageName);
-		System.out.println("Verifying the file presence");
+		System.out.println("Verifying the image presence");
 		Assert.assertTrue(arr[(arr.length - 1)].contains(imageName), "Uploaded image is not displayed");
 	}
 }

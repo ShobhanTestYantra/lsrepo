@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -56,10 +57,12 @@ public class BaseTest {
 
 	@BeforeMethod
 	public void beforeMethod() {
-
+		ChromeOptions options = new ChromeOptions();
+		//Add chrome switch to disable notification - "**--disable-notifications**"
+		options.addArguments("--disable-notifications");
 		System.out.println("open the browser");
 		System.setProperty(UtilityConstants.CHROME_KEY, UtilityConstants.CHROME_PATH);
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 		driver.get(UtilityConstants.URL);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);

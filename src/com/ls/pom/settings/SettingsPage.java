@@ -18,13 +18,13 @@ public class SettingsPage extends BasePage {
 	@FindBy(xpath = "//span[text()='Users and Permissions']/parent::a")
 	private WebElement usersAndPermissionsLnk;
 
-	@FindBy(xpath = "/span[text()='Security']/parent::a")
+	@FindBy(xpath = "//span[text()='Security']/parent::a")
 	private WebElement securityLnk;
 
 	@FindBy(xpath = "//span[text()='Customization']/parent::a")
 	private WebElement customizationLnk;
 
-	@FindBy(xpath = "/span[text()='Mobile App']/parent::a")
+	@FindBy(xpath = "//span[text()='Mobile App']/parent::a")
 	private WebElement mobileAppLnk;
 
 	@FindBy(xpath = "//span[text()='Lead Tracking']/parent::a")
@@ -33,13 +33,13 @@ public class SettingsPage extends BasePage {
 	@FindBy(xpath = "//span[text()='Lead Prioritization']/parent::a")
 	private WebElement leadPrioritizationLnk;
 
-	@FindBy(xpath = "/span[text()='Email Settings']/parent::a")
+	@FindBy(xpath = "//span[text()='Email Settings']/parent::a")
 	private WebElement emailSettingsLnk;
 
-	@FindBy(xpath = "/span[text()='API and Webhooks']/parent::a")
+	@FindBy(xpath = "//span[text()='API and Webhooks']/parent::a")
 	private WebElement aPIAndWebhooksLnk;
 
-	@FindBy(xpath = "/span[text()='Rules and Notifications']/parent::a")
+	@FindBy(xpath = "//span[text()='Rules and Notifications']/parent::a")
 	private WebElement rulesAndNotificationsLnk;
 
 	@FindBy(xpath = "//span[text()='Data Protection & Privacy']/parent::a")

@@ -15,7 +15,7 @@ public class UserProfilePage extends BasePage {
 	@FindBy(xpath = "(//a[contains(.,'Billing')])[1]")
 	private WebElement billingLnk;
 
-	@FindBy(xpath = "(//a[contains(.,'Settings')])[2]")
+	@FindBy(xpath = "//ul[@class='dropdown-menu pull-right']/descendant::span[@class='user-option-icon settings']/parent::a")
 	private WebElement settingsLnk;
 
 	@FindBy(xpath = "(//a[contains(.,' Sign Out')])[1]")

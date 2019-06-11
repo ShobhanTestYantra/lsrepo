@@ -6,10 +6,11 @@ import org.openqa.selenium.support.FindBy;
 
 import com.ls.generic.BasePage;
 
-public class ProfilePage extends BasePage {
+public class UserProfilePage extends BasePage {
 
-	public ProfilePage(WebDriver driver) {
+	public UserProfilePage(WebDriver driver) {
 		super(driver);
+
 	}
 
 	@FindBy(xpath = "(//ul[@class='mx-top-nav'])[1]")

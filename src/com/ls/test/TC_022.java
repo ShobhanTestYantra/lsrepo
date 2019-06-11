@@ -8,9 +8,9 @@ import com.ls.generic.UtilityConstants;
 import com.ls.pom.LoginPage;
 import com.ls.pom.leads.managelist.ManageListsPage;
 
-public class TC_021 extends BaseTest {
+public class TC_022 extends BaseTest{
 	@Test
-	public void testsaveStaticList() throws Exception
+	public void testsaveDyanamicList() throws Exception
 	{
 		ManageListsPage m1 = new ManageListsPage(driver);
 		LoginPage l1 = new LoginPage(driver);
@@ -32,14 +32,14 @@ public class TC_021 extends BaseTest {
 	    Thread.sleep(3000);
 	    m1.clickFindLeadsButton();
 	    Thread.sleep(3000);
-	    String listname = "Demo Staic List 01";
-	    String Description="desc";
-	    m1.selectsticlist(listname, Description);
+	    String listname = "Demo Dyanamic List 17";
+	    String Description="desc for Dyanamic List";
+	    m1.clicksaveDyanicList(listname, Description);
 	    Thread.sleep(3000);
 	    Reporter.log("Click on the save Button after entering all the details in the static list", true);
 	    m1.clicksaveButton();
+	    
 	    m1.verifyListGrid(listname);
-	   
-	}
-	
+
+}
 }

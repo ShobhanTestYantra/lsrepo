@@ -12,7 +12,6 @@ public class BuildLandingPage extends BasePage {
 
 	public BuildLandingPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	@FindBy(xpath = "//button[text()='Publish']")
@@ -39,7 +38,6 @@ public class BuildLandingPage extends BasePage {
 
 	public void clickconfirmpublishBtn() {
 		System.out.println("click on confirm publish");
-
 		clickElement(publishconfirmBtn);
 	}
 
@@ -50,21 +48,15 @@ public class BuildLandingPage extends BasePage {
 		String amsg = aMsg.getText();
 		Thread.sleep(3000);
 		Assert.assertEquals(amsg, emsg);
-
 	}
 
 	public void clickGetListBtn() {
 		System.out.println("click on confirm publish");
-
 		clickElement(getListBtn);
-
 	}
 
 	public void clickconfirmUrl() {
 		System.out.println("click on confirm Url Lnk");
-
 		clickElement(confirmurlLnk);
-
 	}
-
 }

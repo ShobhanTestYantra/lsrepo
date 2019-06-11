@@ -33,7 +33,5 @@ public class SelectTemplatePage extends BasePage {
 		mouseHover(RealEstateImg);
 		System.out.println("click on the select Button over the template");
 		clickElement(RealEstateTemplateSelectBtn);
-
 	}
-
 }

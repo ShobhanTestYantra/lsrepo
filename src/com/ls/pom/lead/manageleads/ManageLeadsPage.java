@@ -10,10 +10,9 @@ import com.ls.generic.BasePage;
 
 public class ManageLeadsPage extends BasePage {
 	String value = "Referral Sites";
-	
+
 	public ManageLeadsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	@FindBy(xpath = "//a[contains(.,'Manage Leads')]")
@@ -51,12 +50,11 @@ public class ManageLeadsPage extends BasePage {
 	@FindBy(xpath = "//button[.='Save and Close']")
 	private WebElement saveAndCloseBtn;
 
-
 	/**
 	 * @author ShobhanKS
-	 * @return 
-	 * @throws InterruptedException 
-	 * @description Creating New Lead from "Quick add Lead" 
+	 * @return
+	 * @throws InterruptedException
+	 * @description Creating New Lead from "Quick add Lead"
 	 */
 	public String quickAddLead() throws InterruptedException {
 
@@ -78,13 +76,13 @@ public class ManageLeadsPage extends BasePage {
 		typeText(phoneNumberTxtBx, "6992768159");
 		typeText(websiteTxtBx, "www.google.com");
 		typeText(NotesTxtBx, "This is Automation Genarated text");
-		
+
 		System.out.println("Click on \"Save And Close\" Button");
 		clickElement(saveAndCloseBtn);
 		// System.out.println(driver.findElement(By.xpath("//div[@id='quickAddNewLeadHolderTogle']")).getText());
 		// unable to find the element for the toast message
 		// Assert.assertEquals("", "Lead added Successfully");
-		//Thread.sleep(5000);
+		// Thread.sleep(5000);
 		System.out.println("Lead added Successfully");
 		return "Megha6";
 	}

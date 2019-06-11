@@ -57,10 +57,9 @@ public class DocumentLibraryPage extends BasePage {
 		try {
 			System.out.println(" Uploading File...");
 			upload(filePath);
-			
+
 		} catch (InterruptedException | AWTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				e.printStackTrace();
 			System.out.println("File is not uploaded");
 		}
 		Thread.sleep(10000);

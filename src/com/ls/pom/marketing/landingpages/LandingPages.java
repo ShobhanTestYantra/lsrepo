@@ -42,7 +42,6 @@ public class LandingPages extends BasePage {
 
 	public void selectLandingpages() {
 		System.out.println("Click on create Landing Page DrpDwn ");
-
 		landingpagesDrpDwn.click();
 	}
 
@@ -62,9 +61,7 @@ public class LandingPages extends BasePage {
 		mouseHover(actinsettingIcon);
 	}
 
-	public void verifyUnpublish(String emsg) throws Exception
-
-	{
+	public void verifyUnpublish(String emsg) throws Exception {
 		System.out.println("Click on Action Setting Button ");
 		clickElement(unpublishIcon);
 		clickElement(unpublishBtn);
@@ -73,5 +70,4 @@ public class LandingPages extends BasePage {
 		Thread.sleep(3000);
 		Assert.assertEquals(amsg, emsg);
 	}
-
 }

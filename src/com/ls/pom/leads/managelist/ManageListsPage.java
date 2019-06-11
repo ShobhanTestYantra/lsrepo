@@ -12,7 +12,6 @@ public class ManageListsPage extends BasePage {
 
 	public ManageListsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	@FindBy(xpath = "//li/a[@ href=\"/ManageLists\"]")
@@ -60,14 +59,12 @@ public class ManageListsPage extends BasePage {
 
 		Reporter.log("Clicking on create new List Button");
 		clickElement(createNewListBtn);
-
 	}
 
 	public void selectActivity() {
 		Reporter.log("Click on on the select activity arrow");
 		clickElement(seleactivityDrpDwn);
 		Select select = new Select(selectAnyActivityOtn);
-
 	}
 
 	public void clickAddButton() {
@@ -79,7 +76,6 @@ public class ManageListsPage extends BasePage {
 	public void clickFindLeadsButton() {
 		Reporter.log("Click on find Leads ");
 		clickElement(findleadsBtn);
-
 	}
 
 	public void selectsticlist(String listname, String Description) {
@@ -89,12 +85,10 @@ public class ManageListsPage extends BasePage {
 		typeText(listNameTxtBx, listname);
 		Reporter.log("enetr the Description");
 		typeText(descriptionTxtArea, Description);
-
 	}
 
 	public void clicksaveButton() {
 		Reporter.log("Click on save button");
 		clickElement(saveBtn);
 	}
-
 }

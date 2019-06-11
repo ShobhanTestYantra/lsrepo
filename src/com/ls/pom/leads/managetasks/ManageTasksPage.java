@@ -13,7 +13,7 @@ public class ManageTasksPage extends BasePage {
 	public ManageTasksPage(WebDriver driver) {
 		super(driver);
 	}
-
+	
 	@FindBy(xpath = "//li/a[contains(.,'Manage Tasks')]")
 	private WebElement manageTasksDrpDwn;
 
@@ -89,7 +89,5 @@ public class ManageTasksPage extends BasePage {
 		clickElement(saveBtn);
 		Assert.assertEquals(toastMsg.getText(), "Task created successfully.");
 		System.out.println(toastMsg.getText());
-
 	}
-
 }

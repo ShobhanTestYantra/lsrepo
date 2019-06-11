@@ -15,5 +15,4 @@ public class UtilityConstants {
 
 	// excelpath
 	public static final String EXCEL_PATH = "./LibraryFolder/Excel/exceldata.xls";
-
 }

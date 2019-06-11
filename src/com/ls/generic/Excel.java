@@ -38,8 +38,7 @@ public class Excel {
 		Row row = sheet.getRow(rowNum);
 		Cell cell = row.getCell(cellNum);
 		String cellValue = cell.getStringCellValue();
-
 		return cellValue;
 	}
 }
-//}
+

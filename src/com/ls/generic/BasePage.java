@@ -149,5 +149,4 @@ public class BasePage {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript(stvalue, "");
 	}
-
 }

@@ -210,4 +210,8 @@ public class BasePage {
         }
         return eleText;
     }
+    public void refreshPage()
+    {
+    	driver.navigate().refresh();
+    }
 }

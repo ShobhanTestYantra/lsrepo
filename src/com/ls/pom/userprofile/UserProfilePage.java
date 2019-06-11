@@ -1,4 +1,4 @@
-package com.ls.pom.profile;
+package com.ls.pom.userprofile;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -38,6 +38,7 @@ public class TC_021 extends BaseTest {
 	    Thread.sleep(3000);
 	    Reporter.log("Click on the save Button after entering all the details in the static list", true);
 	    m1.clicksaveButton();
+	    m1.verifyListGrid(listname);
 	   
 	}
 	

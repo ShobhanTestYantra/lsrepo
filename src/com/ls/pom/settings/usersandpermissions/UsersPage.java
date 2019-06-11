@@ -12,7 +12,7 @@ public class UsersPage extends BasePage {
 		super(driver);
 	}
 
-	@FindBy(xpath="")
+	@FindBy(xpath="//a[text()='Users']")
 	private WebElement userLnk;
 	
 	@FindBy(xpath="")
@@ -33,11 +33,17 @@ public class UsersPage extends BasePage {
 	@FindBy(xpath="//span[@class='custom-combobox']")
 	private WebElement reportingToTxtBx;
 	
-	
 	@FindBy(xpath="//button[.='Create User']")
 	private WebElement createUserBtn;
+
+	@FindBy(xpath="//div[@class='alert-message']")
+	private WebElement toastMsg;
 		
 	public void clkCreateUser() {
+		clickElement(createBtn);	
+	}
+	
+	public void fillCreateUserform() {
 		clickElement(createBtn);	
 	}
 }

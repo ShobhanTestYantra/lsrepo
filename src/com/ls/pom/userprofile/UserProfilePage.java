@@ -10,7 +10,6 @@ public class UserProfilePage extends BasePage {
 
 	public UserProfilePage(WebDriver driver) {
 		super(driver);
-
 	}
 
 	@FindBy(xpath = "(//ul[@class='mx-top-nav'])[1]")

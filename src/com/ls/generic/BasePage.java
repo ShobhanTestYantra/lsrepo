@@ -22,6 +22,7 @@ public class BasePage {
 
 	public WebDriver driver;
 	WebDriverWait wait;
+	public long ETO=0;
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -149,4 +150,71 @@ public class BasePage {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript(stvalue, "");
 	}
+	
+	 
+    /*wait till the page to load*/
+    public void waitTillPageLoad() {
+        JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+         ExpectedCondition<Boolean> jsLoad = webdriver -> ((JavascriptExecutor) driver)
+                .executeScript("return document.readyState").toString().equals("complete");
+        boolean jsReady = (Boolean) jsExec.executeScript("return document.readyState").toString().equals("complete");
+        if (!jsReady) {
+   //         generic.logMessage("FAIL","JS in NOT Ready!");
+            wait.until(jsLoad);
+        } else {
+   //         generic.logMessage("PASS","JS is Ready!");
+        }
+   //     generic.logMessage("PASS"," page is in ready state ");
+    }
+    
+    /* Verify the Element is Clickable or Not */
+    public boolean isElementClickable(WebElement element,String elementName)  {
+        waitTillPageLoad();
+   //     generic.logMessage("INFO","---------Verifying Element is Clickable or Not ---------");
+        try {           
+            wait.until(ExpectedConditions.visibilityOf(element));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+            } catch (Exception e) {
+        //        generic.logMessage("INFO",elementName +"  is not clickable ");
+            return false;
+        }
+    }
+	
+	/* Verify the Element is Displayed or Not */
+    /* Verify the Element is Displayed or Not */
+   public  void isElementDisplayed(WebElement element, String elementName){
+       try {
+       //    generic.logMessage("INFO","---------Verifying element is displayed or not ---------");
+           waitTillPageLoad();
+           WebDriverWait wait = new WebDriverWait(driver,ETO);
+           wait.until(ExpectedConditions.visibilityOf(element));
+           Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(element)) != null);
+      //     generic.logMessage("PASS",elementName + "------ is displayed");
+       } 
+       catch (Exception e) {
+   //        generic.logMessage("PASS",elementName + "------ is not displayed");
+       }
+   }
+	
+	/* Get the Text From the Page */
+    public String getText(WebElement element, String elementName)  {
+  //      generic.logMessage("INFO","Get the text from the element:");
+        String eleText = null;
+        try {
+            waitTillPageLoad();
+            isElementDisplayed(element, elementName);
+            eleText = element.getText();
+            if (eleText.equals(null)) {
+         //       generic.logMessage("INFO","Unable to fetch text from " + "\'" + elementName );
+                //MyExtentListners.test.addScreenCaptureFromPath(capture(driver)); // exception
+                Assert.fail("Unable to fetch text from " + "\'" + elementName + "\'");
+            }
+        } catch (Exception e) {
+         //   generic.logMessage("INFO","Unable to fetch text from " + "\'" + elementName + "\'");
+            //MyExtentListners.test.addScreenCaptureFromPath(capture(driver)); // exception
+            Assert.fail("Unable to fetch text from " + elementName);
+        }
+        return eleText;
+    }
 }

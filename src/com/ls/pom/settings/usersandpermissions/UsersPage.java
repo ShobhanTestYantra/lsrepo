@@ -33,7 +33,7 @@ public class UsersPage extends BasePage {
 	@FindBy(xpath="//input[@class='ui-widget-content ui-autocomplete-input']")
 	private WebElement phoneTxtBx;
 	
-	@FindBy(xpath="//span[@class='custom-combobox']")
+	@FindBy(xpath="//span[@class='custom-combobox']/input")
 	private WebElement reportingToTxtBx;
 	
 	@FindBy(xpath="//button[.='Create User']")
@@ -57,12 +57,16 @@ public class UsersPage extends BasePage {
 		typeText(firstNameTxtBx, "Rohith");
 		typeText(lastNameTxtBx, "Ln");
 		typeText(emailAddressTxtBx, email); 
-		typeText(phoneTxtBx, "Ln");  
+		typeText(phoneTxtBx, "+91-8892768161");  
+		clickElement(reportingToTxtBx);
+		Thread.sleep(2000);
 		typeText(reportingToTxtBx, "Shobhan K S");
 		Thread.sleep(2000);
 		reportingToTxtBx.sendKeys(Keys.ARROW_DOWN);
-		reportingToTxtBx.sendKeys(Keys.ENTER);	
 		Thread.sleep(2000);
+		reportingToTxtBx.sendKeys(Keys.ENTER);	
+		clickElement(createUserBtn);
+		Thread.sleep(3000);
 		assertEquals(toastMsg.getText(),"User created successfully! Invitation has been sent to "+email);
 	}
 }

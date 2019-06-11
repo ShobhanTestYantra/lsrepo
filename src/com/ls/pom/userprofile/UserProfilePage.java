@@ -15,7 +15,7 @@ public class UserProfilePage extends BasePage {
 	@FindBy(xpath = "(//a[contains(.,'Billing')])[1]")
 	private WebElement billingLnk;
 
-	@FindBy(xpath = "//ul[@class='dropdown-menu pull-right']/descendant::span[@class='user-option-icon settings']/parent::a")
+	@FindBy(xpath = "(//a[@href='/Settings/MyProfile']/span)[1]")
 	private WebElement settingsLnk;
 
 	@FindBy(xpath = "(//a[contains(.,' Sign Out')])[1]")
@@ -28,6 +28,8 @@ public class UserProfilePage extends BasePage {
 
 	public void clkSettingsLnk() {
 		System.out.println("click on Settings Link");
+		//waitUntilLoadedAndVisibilityOfElementLocated(settingsLnk);
+		waitTillPageLoad();
 		clickElement(settingsLnk);
 	}
 

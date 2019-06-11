@@ -12,9 +12,6 @@ public class UserProfilePage extends BasePage {
 		super(driver);
 	}
 
-	@FindBy(xpath = "(//ul[@class='mx-top-nav'])[1]")
-	private WebElement profileTab;
-
 	@FindBy(xpath = "(//a[contains(.,'Billing')])[1]")
 	private WebElement billingLnk;
 
@@ -23,11 +20,6 @@ public class UserProfilePage extends BasePage {
 
 	@FindBy(xpath = "(//a[contains(.,' Sign Out')])[1]")
 	private WebElement signOutLnk;
-
-	public void hoverToProfileTab() {
-		System.out.println("Go to the Profile Tab  ");
-		mouseHover(profileTab);
-	}
 
 	public void clkbillingLnk() {
 		System.out.println("Go to the Profile Tab  ");

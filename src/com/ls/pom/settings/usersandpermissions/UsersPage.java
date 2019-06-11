@@ -1,5 +1,8 @@
 package com.ls.pom.settings.usersandpermissions;
 
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +18,7 @@ public class UsersPage extends BasePage {
 	@FindBy(xpath="//a[text()='Users']")
 	private WebElement userLnk;
 	
-	@FindBy(xpath="")
+	@FindBy(id="createUser")
 	private WebElement createBtn;
 	
 	@FindBy(id="FirstName")
@@ -38,12 +41,28 @@ public class UsersPage extends BasePage {
 
 	@FindBy(xpath="//div[@class='alert-message']")
 	private WebElement toastMsg;
-		
-	public void clkCreateUser() {
+	
+	public void clkUserLnk() {
+		System.out.println("Click on user Link");
+		clickElement(userLnk);	
+	}
+	
+	public void clkCreate() {
+		System.out.println("Click on create Button ");
 		clickElement(createBtn);	
 	}
 	
-	public void fillCreateUserform() {
-		clickElement(createBtn);	
+	public void fillCreateUserform(String email) throws InterruptedException {
+		System.out.println("Fill Create User form");
+		typeText(firstNameTxtBx, "Rohith");
+		typeText(lastNameTxtBx, "Ln");
+		typeText(emailAddressTxtBx, email); 
+		typeText(phoneTxtBx, "Ln");  
+		typeText(reportingToTxtBx, "Shobhan K S");
+		Thread.sleep(2000);
+		reportingToTxtBx.sendKeys(Keys.ARROW_DOWN);
+		reportingToTxtBx.sendKeys(Keys.ENTER);	
+		Thread.sleep(2000);
+		assertEquals(toastMsg.getText(),"User created successfully! Invitation has been sent to "+email);
 	}
 }

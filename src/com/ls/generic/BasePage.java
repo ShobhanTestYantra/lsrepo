@@ -101,7 +101,7 @@ public class BasePage {
 
 	}
 	
-	public void hoverToProfileTab() {
+	public void hoverToUserProfileTab() {
 		System.out.println("Go to the Profile Tab  ");
 		mouseHover(profileTab);
 	}

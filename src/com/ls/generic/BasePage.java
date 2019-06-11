@@ -62,6 +62,9 @@ public class BasePage {
 	@FindBy(xpath = "//li[@class='dropdown' and @menu='Reports']/a[contains(.,'Reports')]")
 	private WebElement ReportsTab;
 
+	@FindBy(xpath = "(//ul[@class='mx-top-nav'])[1]")
+	private WebElement profileTab;
+
 	public void hoverToDashboard() {
 		System.out.println("Go to the Dashboard Tab ");
 		mouseHover(dashboardTab);
@@ -97,6 +100,11 @@ public class BasePage {
 		mouseHover(ReportsTab);
 
 	}
+	
+	public void hoverToProfileTab() {
+		System.out.println("Go to the Profile Tab  ");
+		mouseHover(profileTab);
+	}
 
 	// #################################################################//
 	// Selenium methods
@@ -124,7 +132,6 @@ public class BasePage {
 	public void mouseHover(WebElement element) {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
-
 	}
 
 	public void upload(String imagePath) throws InterruptedException, AWTException {

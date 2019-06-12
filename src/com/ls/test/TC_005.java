@@ -13,7 +13,7 @@ import com.ls.pom.marketing.landingpages.SelectTemplatePage;
 public class TC_005 extends BaseTest{
 	
 	@Test
-	public void testpublishLP() throws Exception
+	public void testpublishLandingPage() throws Exception
 	{ 
 		
 		LoginPage l1 = new LoginPage(driver);

@@ -74,10 +74,10 @@ public class ManageLeadsPage extends BasePage {
 		System.out.println("Fill \"Quick Add Lead\" form ");
 		clickElement(carnivalCampaignDrpDwn);
 		clickElement(selectOptionCarnivalCampaign(value));
-		typeText(firstNameTxtBx, "Megha6");// Shobhan
-		typeText(lastNameTxtBx, "sgk6");// K S
+		typeText(firstNameTxtBx, "Megha8");// Shobhan
+		typeText(lastNameTxtBx, "sgk8");// K S
 		typeText(emailAddresseTxtBx, "shobhan6@armyspy.com");
-		typeText(phoneNumberTxtBx, "6992768159");
+		typeText(phoneNumberTxtBx, "8992768159");
 		typeText(websiteTxtBx, "www.google.com");
 		typeText(NotesTxtBx, "This is Automation Genarated text");
 
@@ -88,7 +88,7 @@ public class ManageLeadsPage extends BasePage {
 		// Assert.assertEquals("", "Lead added Successfully");
 		// Thread.sleep(5000);
 		System.out.println("Lead added Successfully");
-		return "Megha6";
+		return "Megha8";
 	}
 	
 	public void quickAddLeadwithboreturn(String fname,String lname,String email) throws InterruptedException {
@@ -109,7 +109,7 @@ public class ManageLeadsPage extends BasePage {
 		typeText(lastNameTxtBx, lname);// K S
 		typeText(emailAddresseTxtBx, email);
 		typeText(phoneNumberTxtBx, "6992768159");
-	
+
 		typeText(NotesTxtBx, "This is Automation Genarated text");
 
 		System.out.println("Click on \"Save And Close\" Button");
@@ -119,7 +119,7 @@ public class ManageLeadsPage extends BasePage {
 		// Assert.assertEquals("", "Lead added Successfully");
 		// Thread.sleep(5000);
 		System.out.println("Lead added Successfully");
-		
+
 	}
 	
 	public void clickfirstElement()

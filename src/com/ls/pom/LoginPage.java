@@ -42,7 +42,7 @@ public class LoginPage extends BasePage {
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
-					e.printStackTrace();
+				e.printStackTrace();
 			}
 			typeText(passwordTxtBx, password);
 			clickElement(nextBtn);
@@ -54,6 +54,7 @@ public class LoginPage extends BasePage {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+			System.out.println("Login to the LS Application got failed");
 		}
 		Assert.assertEquals(driver.getTitle(), "Administrator Dashboard");
 	}

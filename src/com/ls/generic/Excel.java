@@ -15,6 +15,16 @@ public class Excel {
 
 	static String filePath = UtilityConstants.EXCEL_PATH;
 
+	/**
+	 * Write on Excel Sheet
+	 * 
+	 * @param sheetName
+	 * @param rowNum
+	 * @param cellNum
+	 * @param inputData
+	 * @throws InvalidFormatException
+	 * @throws IOException
+	 */
 	public static void writeExcelSheet(String sheetName, int rowNum, int cellNum, String inputData)
 			throws InvalidFormatException, IOException {
 
@@ -29,6 +39,16 @@ public class Excel {
 		fos.close();
 	}
 
+	/**
+	 * Read from the Excel Sheet
+	 * 
+	 * @param sheetName
+	 * @param rowNum
+	 * @param cellNum
+	 * @return
+	 * @throws InvalidFormatException
+	 * @throws IOException
+	 */
 	public static String readExcelSheet(String sheetName, int rowNum, int cellNum)
 			throws InvalidFormatException, IOException {
 		FileInputStream fis;
@@ -41,4 +61,3 @@ public class Excel {
 		return cellValue;
 	}
 }
-

@@ -55,12 +55,18 @@ public class BaseTest {
 //
 //	}
 
+	
+	
+	/**
+	 * <h1> open the browser with given URL</h1>
+	 * @author ShobhanKS
+	 */
 	@BeforeMethod
 	public void beforeMethod() {
+		System.out.println("open the browser");
 		ChromeOptions options = new ChromeOptions();
 		// Add chrome switch to disable notification - "**--disable-notifications**"
 		options.addArguments("--disable-notifications");
-		System.out.println("open the browser");
 		System.setProperty(UtilityConstants.CHROME_KEY, UtilityConstants.CHROME_PATH);
 		driver = new ChromeDriver(options);
 		driver.get(UtilityConstants.URL);
@@ -68,7 +74,11 @@ public class BaseTest {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
-
+	
+	/**
+	 * <h1>Closing the Browser </h1>
+	 * @author ShobhanKS
+	 */
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Close the browser");

@@ -14,7 +14,7 @@ import com.ls.generic.BasePage;
 public class ImageLibraryPage extends BasePage {
 
 	String blankpagetxt = "No images found.";
-	String folderName = "TYSSFolder2";
+	String folderName = "TYSSFolder3";
 	String imagePath = System.getProperty("user.dir") + "\\inputTestData\\Image_Testdata2_JPG.jpg";
 	String imageName = "Image_Testdata2_JPG.jpg";
 
@@ -90,8 +90,9 @@ public class ImageLibraryPage extends BasePage {
 		clickElement(uploadBtn);
 		try {
 			System.out.println("Uploading the Image...");
+			Thread.sleep(4000);
 			upload(imagePath);
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 		} catch (InterruptedException | AWTException e) {
 			e.printStackTrace();
 			System.out.println("Uploading Image is unsuccessfull");
@@ -125,7 +126,7 @@ public class ImageLibraryPage extends BasePage {
 
 		System.out.println("Creating New folder ");
 		clickElement(addFolderBtn);
-		typeText(newFolderTxtBx, "TYSSFolder");
+		typeText(newFolderTxtBx, "TYSSFolder10");
 
 		System.out.println("Clicking on \"Save\" Icon ");
 		clickElement(saveIcon);
@@ -179,9 +180,10 @@ public class ImageLibraryPage extends BasePage {
 		// waitUntilLoadedAndVisibilityOfElementLocated(uploadBtn);
 		Thread.sleep(4000);
 		clickElement(uploadBtn);
-		Thread.sleep(2000);
+	
 		try {
 			System.out.println("Uploading the Image");
+			Thread.sleep(5000);
 			upload(imagePath);
 			Thread.sleep(3000);
 		} catch (InterruptedException | AWTException e) {

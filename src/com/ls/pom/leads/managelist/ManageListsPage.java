@@ -24,10 +24,10 @@ public class ManageListsPage extends BasePage {
 	@FindBy(xpath = "//div[@id='relatedAction_HR']/descendant::span[text()='Create New List']")
 	private WebElement createNewListBtn;
 
-	@FindBy(xpath = "//ul[@id='ui-id-168']/following-sibling::a[@title='Show All Items']")
+	@FindBy(xpath = "(//a[@title='Show All Items'])[2]")
 	private WebElement seleactivityDrpDwn;
 
-	@FindBy(xpath = "//ul[@id='ui-id-168']/descendant::a[text()='Any Activity']")
+	@FindBy(xpath = "//a[text()='Any Activity']")
 	private WebElement selectAnyActivityOtn;
 
 	@FindBy(xpath = "//button[@id='btnAddRow']")
@@ -51,9 +51,11 @@ public class ManageListsPage extends BasePage {
 
     @FindBy(xpath="//tbody/tr/td[@class='grid-col-name ']/descendant::a")
     private List<WebElement> listGrid;
+    
+    
 
 	public void selectManagelist() {
-		Reporter.log("Click on manage list");
+		Reporter.log("Click on manage list",true);
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();",managelistDrpDwn );
 		Assert.assertEquals(driver.getTitle(), "Manage Lists");
@@ -62,38 +64,44 @@ public class ManageListsPage extends BasePage {
 	public void clickCreateNewListButton() {
 
 
-		Reporter.log("Clicking on create new List Button");
+		Reporter.log("Clicking on create new List Button",true);
 		clickElement(createNewListBtn);
 	}
 
-	public void selectActivity() {
-		Reporter.log("Click on on the select activity arrow");
+	public void selectActivity() throws Exception {
+		Thread.sleep(2000);
+		Reporter.log("Click on on the select activity arrow",true);
 		clickElement(seleactivityDrpDwn);
-		Select select = new Select(selectAnyActivityOtn);
+	
 	}
-
+	public void selectAnyActivity() throws InterruptedException {
+		Thread.sleep(2000);
+		Reporter.log("Click on on the any Activity",true);
+		clickElement(selectAnyActivityOtn);
+	
+	}
 	public void clickAddButton() {
-		Reporter.log("Click on addBtn");
+		Reporter.log("Click on addBtn",true);
 		clickElement(addBtn);
 
 	}
 
 	public void clickFindLeadsButton() {
-		Reporter.log("Click on find Leads ");
+		Reporter.log("Click on find Leads ",true);
 		clickElement(findleadsBtn);
 	}
 
 	public void selectsticlist(String listname, String Description) {
-		Reporter.log("Click on save static list");
+		Reporter.log("Click on save static list",true);
 		clickElement(savestaticListBtn);
-		Reporter.log("enetr the List Name");
+		Reporter.log("enetr the List Name",true);
 		typeText(listNameTxtBx, listname);
-		Reporter.log("enetr the Description");
+		Reporter.log("enetr the Description",true);
 		typeText(descriptionTxtArea, Description);
 	}
 
 	public void clicksaveButton() {
-		Reporter.log("Click on save button");
+		Reporter.log("Click on save button",true);
 		clickElement(saveBtn);
 	}
 	
@@ -130,4 +138,6 @@ public class ManageListsPage extends BasePage {
 		Reporter.log("enetr the Description",true);
 		typeText(descriptionTxtArea, Description);
 	}
+	
+
 }

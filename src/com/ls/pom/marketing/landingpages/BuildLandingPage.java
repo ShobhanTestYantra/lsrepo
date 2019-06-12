@@ -29,14 +29,14 @@ public class BuildLandingPage extends BasePage {
 	@FindBy(xpath = "//div[@id='http-lp-url']/descendant::a")
 	private WebElement confirmurlLnk;
 
-	public void clickpublishBtn(int value) {
+	public void clickOnPublishBtn(int value) {
 		System.out.println("Scroll down to the publish button");
 		scrollwithvalue(value);
 		System.out.println("click on  publish button");
 		clickElement(publishBtn);
 	}
 
-	public void clickconfirmpublishBtn() {
+	public void clickOnConfirmPublishBtn() {
 		System.out.println("click on confirm publish");
 		clickElement(publishconfirmBtn);
 	}
@@ -50,12 +50,12 @@ public class BuildLandingPage extends BasePage {
 		Assert.assertEquals(amsg, emsg);
 	}
 
-	public void clickGetListBtn() {
+	public void clickOnGetListBtn() {
 		System.out.println("click on confirm publish");
 		clickElement(getListBtn);
 	}
 
-	public void clickconfirmUrl() {
+	public void clickOnConfirmUrl() {
 		System.out.println("click on confirm Url Lnk");
 		clickElement(confirmurlLnk);
 	}

@@ -19,29 +19,35 @@ public class TC_006  extends BaseTest{
 	l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
 	
 	LandingPages lp1 =new LandingPages(driver);
+	/* Hover on the marketing Tab*/
 	Reporter.log("Hover on the Marketing tab",true);
 	Thread.sleep(3000);
 	lp1.hoverToMarketing();
 	Thread.sleep(3000);
+	/* Select the landing pages option from the Drop Down*/
 	Reporter.log("Select the landing pages from drop down ",true);
 	lp1.selectLandingpages();
 	Thread.sleep(3000);
+	/* Click on the create landing pages button */
 	Reporter.log("Click on the create landing pages button",true);
 	lp1.clickCreateLPButton();
 	Thread.sleep(3000);
 	SelectTemplatePage sp=new SelectTemplatePage(driver);
+	/* Select the Landing page Tamplate */
 	Reporter.log("Selecting the Landing Template",true);
 	Thread.sleep(3000);
-	String lpname="Landing page 02";
-	String tagname="tag 03";
-	sp.selectTemplate(lpname,tagname);
+	String lpname="Landing page 08";
+	String tagname="tag 09";
+	
+	sp.enterlandingPageName(lpname,tagname);
 	Thread.sleep(3000);
 	BuildLandingPage bp=new BuildLandingPage(driver);
 	Thread.sleep(3000);
-	bp.clickpublishBtn(700);
+	int value=700;
+	bp.clickOnPublishBtn(value);
 	Thread.sleep(3000);
-	bp.clickconfirmpublishBtn();
-	bp.clickconfirmUrl();
+	bp.clickOnConfirmPublishBtn();
+	bp.clickOnConfirmUrl();
 	
 	
 	}

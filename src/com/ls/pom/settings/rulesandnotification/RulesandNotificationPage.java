@@ -66,6 +66,9 @@ private WebElement viewhistoryIcon;
 @FindBy(xpath="//a[text()=' Show']")
 private WebElement showIcon;
 
+@FindBy(xpath="(//tbody/tr/td[3]/div[@class='rulefield-holder'])[3]")
+private WebElement emailTxt;
+
 public void createRule(String rulename) throws Exception
 {
 	Assert.assertEquals(driver.getTitle(), "Settings: Rules and Notifications");
@@ -115,7 +118,7 @@ public void createRule(String rulename) throws Exception
 	
 	
 }
-public void verifyrule() throws Exception
+public void verifyrule(String eemail) throws Exception
 {
 	Reporter.log("Click on Select Activity DropDown", true);
 	Thread.sleep(3000);
@@ -123,7 +126,14 @@ public void verifyrule() throws Exception
 	Reporter.log("Clickon view History Icon", true);
 	Thread.sleep(3000);
 	clickElement(viewhistoryIcon);
-	
+	refreshPage();
+	Reporter.log("Clickon view show Icon", true);
+	Thread.sleep(3000);
+	clickElement(showIcon);
+    String aemail=	emailTxt.getText();
+    Assert.assertEquals(aemail, eemail);
+    
+    
 	
 }
 }

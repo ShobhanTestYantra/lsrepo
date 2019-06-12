@@ -13,25 +13,29 @@ public class SelectTemplatePage extends BasePage {
 	}
 
 	@FindBy(xpath = "//input[@id='Name']")
-	private WebElement LPNameTxtBx;
+	private WebElement lpnameTxtBx;
 
 	@FindBy(xpath = "//input[@id='tag-input-box']")
-	private WebElement AddMarketTagTxtBx;
+	private WebElement addMarkettagTxtBx;
 
 	@FindBy(xpath = "//div[@title='Real Estate Luxury Apartment']")
-	private WebElement RealEstateImg;
+	private WebElement realEstateImg;
 
 	@FindBy(xpath = "//div[@title='Real Estate Luxury Apartment']/following-sibling::div[contains(.,'SELECT')]")
-	private WebElement RealEstateTemplateSelectBtn;
+	private WebElement realEstateTemplateselectBtn;
 
-	public void selectTemplate(String lpname, String tagname) {
-		System.out.println("Entering the Landing Page Name");
-		typeText(LPNameTxtBx, lpname);
+	public void enterlandingPageName(String lpname, String tagname) {
+		System.out.println("Entering the Landing Page Name after clearing the default name");
+		lpnameTxtBx.clear();
+		typeText(lpnameTxtBx, lpname);
 		System.out.println("Entering the Landing Page Tag");
-		typeText(AddMarketTagTxtBx, tagname);
+		typeText(addMarkettagTxtBx, tagname);
 		System.out.println("MouseOver on the Template");
-		mouseHover(RealEstateImg);
+	}
+	public void selectTemplate()
+	{
+		mouseHover(realEstateImg);
 		System.out.println("click on the select Button over the template");
-		clickElement(RealEstateTemplateSelectBtn);
+		clickElement(realEstateTemplateselectBtn);
 	}
 }

@@ -13,7 +13,7 @@ import com.ls.pom.userprofile.UserProfilePage;
 
 public class TC_031 extends BaseTest {
 	@Test
-	public void testpublishLP() throws Exception
+	public void testcreaterule() throws Exception
 	{ 
 		
 		LoginPage l1 = new LoginPage(driver);
@@ -21,11 +21,13 @@ public class TC_031 extends BaseTest {
 		l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
 		
 		UserProfilePage usp=new UserProfilePage(driver);
+		/*Hover on the User Profile Tab*/
 		usp.hoverToUserProfileTab();
+		/*Click on The Settings Link*/
 		usp.clkSettingsLnk();
 		
 		SettingsPage sp=new SettingsPage(driver);
-		
+		/*Click on Rules and Notification*/
 		sp.clkRulesAndNotificationsLnk();
 		
 		RulesandNotificationPage rp=new RulesandNotificationPage(driver);
@@ -33,14 +35,21 @@ public class TC_031 extends BaseTest {
 		rp.createRule(rulename);
 		
 		usp.hoverToLeads();
+		
 		ManageLeadsPage msp=new ManageLeadsPage(driver);
-		msp.quickAddLeadwithboreturn();
+		
+		String lname="SK";
+		String fname="smita";
+		String email="smita.s@testyantra.com";
+		msp.quickAddLeadwithboreturn(lname,fname,email);
+		
 		
 		
 		usp.hoverToUserProfileTab();
 		usp.clkSettingsLnk();
 		sp.clkRulesAndNotificationsLnk();
-		rp.verifyrule();
+		String eemail="siya.s@testyantra.com";
+		rp.verifyrule(eemail);
 	}
 }
 

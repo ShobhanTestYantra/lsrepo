@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import com.ls.generic.BasePage;
 
@@ -49,6 +50,9 @@ public class ManageLeadsPage extends BasePage {
 
 	@FindBy(xpath = "//button[.='Save and Close']")
 	private WebElement saveAndCloseBtn;
+	
+	@FindBy(xpath="//td[@class='t-last']/preceding::td/child::div[@class='lead-grid-column row-fluid lead-grid-first-column']/div[@class='lead-name row-fluid']")
+    private WebElement firstleadLnk;
 
 	/**
 	 * @author ShobhanKS
@@ -87,7 +91,7 @@ public class ManageLeadsPage extends BasePage {
 		return "Megha6";
 	}
 	
-	public void quickAddLeadwithboreturn() throws InterruptedException {
+	public void quickAddLeadwithboreturn(String fname,String lname,String email) throws InterruptedException {
 
 		System.out.println("Selecting \"Manage Leads\" from the Leads Tab ");
 		waitUntilLoadedAndVisibilityOfElementLocated(manageLeadsDrpDwn);
@@ -101,9 +105,9 @@ public class ManageLeadsPage extends BasePage {
 		System.out.println("Fill \"Quick Add Lead\" form ");
 		clickElement(carnivalCampaignDrpDwn);
 		clickElement(selectOptionCarnivalCampaign(value));
-		typeText(firstNameTxtBx, "sanvi");// Shobhan
-		typeText(lastNameTxtBx, "SK");// K S
-		typeText(emailAddresseTxtBx, "siya.s@testyantra.com");
+		typeText(firstNameTxtBx, fname);// Shobhan
+		typeText(lastNameTxtBx, lname);// K S
+		typeText(emailAddresseTxtBx, email);
 		typeText(phoneNumberTxtBx, "6992768159");
 	
 		typeText(NotesTxtBx, "This is Automation Genarated text");
@@ -116,5 +120,11 @@ public class ManageLeadsPage extends BasePage {
 		// Thread.sleep(5000);
 		System.out.println("Lead added Successfully");
 		
+	}
+	
+	public void clickfirstElement()
+	{
+		Reporter.log("Click on First lead",true);
+		clickElement(firstleadLnk);
 	}
 }

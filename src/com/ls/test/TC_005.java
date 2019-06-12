@@ -26,7 +26,9 @@ public class TC_005 extends BaseTest{
 		Thread.sleep(3000);
 		lp1.hoverToMarketing();
 		Thread.sleep(3000);
+		
 		/* Select the landing pages option from the Drop Down*/
+		
 		Reporter.log("Select the landing pages from drop down ",true);
 		
 		lp1.selectLandingpages();

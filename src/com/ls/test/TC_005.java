@@ -12,7 +12,7 @@ import com.ls.pom.marketing.landingpages.SelectTemplatePage;
 
 public class TC_005 extends BaseTest{
 	
-	@Test
+	@Test(priority=1)
 	public void testpublishLandingPage() throws Exception
 	{ 
 		
@@ -39,7 +39,7 @@ public class TC_005 extends BaseTest{
 		
 		Reporter.log("Selecting the Landing Template",true);
 		Thread.sleep(3000);
-		String lpname="Landing page 07";
+		String lpname="Landing page 88";
 		String tagname="tag 03";
 		/* Entering the Landing Page name and TagName*/
 		sp.enterlandingPageName(lpname,tagname);

@@ -9,7 +9,7 @@ import com.ls.pom.LoginPage;
 import com.ls.pom.leads.managelist.ManageListsPage;
 
 public class TC_021 extends BaseTest {
-	@Test
+	@Test(priority=7)
 	public void testsaveStaticList() throws Exception {
 		ManageListsPage m1 = new ManageListsPage(driver);
 		LoginPage l1 = new LoginPage(driver);

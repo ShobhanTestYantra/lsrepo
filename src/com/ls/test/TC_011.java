@@ -9,7 +9,7 @@ import com.ls.pom.content.imgdocs.DocumentLibraryPage;
 
 public class TC_011 extends BaseTest {
 
-	@Test
+	@Test(priority=4)
 	public void uploadFileTest() throws InterruptedException {
 		/* login to the application */
 		LoginPage l1 = new LoginPage(driver);

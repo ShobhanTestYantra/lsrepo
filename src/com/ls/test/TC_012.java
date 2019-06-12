@@ -8,7 +8,8 @@ import com.ls.pom.LoginPage;
 import com.ls.pom.content.imgdocs.ImageLibraryPage;
 
 public class TC_012 extends BaseTest{
-	@Test
+
+	@Test(priority=5)
 	public void createFolderTest() throws InterruptedException {
 		/* login to the application */
 		LoginPage l1 = new LoginPage(driver);

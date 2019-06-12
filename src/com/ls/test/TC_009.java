@@ -11,7 +11,7 @@ import com.ls.pom.marketing.landingpages.LandingPages;
 import com.ls.pom.marketing.landingpages.SelectTemplatePage;
 
 public class TC_009 extends BaseTest {
-	@Test
+	@Test(priority=2)
 	public void testUnpublish() throws Exception{
 		
 	LoginPage l1 = new LoginPage(driver);

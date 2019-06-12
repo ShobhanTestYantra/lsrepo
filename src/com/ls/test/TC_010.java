@@ -9,7 +9,7 @@ import com.ls.pom.content.imgdocs.ImageLibraryPage;
 
 public class TC_010 extends BaseTest {
 
-	@Test
+	@Test(priority=3)
 	public void uploadImageTest() throws InterruptedException {
 
 		/* login to the application */

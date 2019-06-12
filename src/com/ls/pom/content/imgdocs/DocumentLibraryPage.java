@@ -37,12 +37,12 @@ public class DocumentLibraryPage extends BasePage {
 	private WebElement fileIcon;
 
 	/**
+	 * @description Uploading the file
 	 * @author ShobhanKS
 	 * @param imagePath
 	 * @throws InterruptedException
 	 * @throws AWTException
-	 * 
-	 */
+	 * 	 */
 	public void uploadFiles() throws InterruptedException {
 
 		String filePath = System.getProperty("user.dir") + "\\inputTestData\\10mb2.txt";

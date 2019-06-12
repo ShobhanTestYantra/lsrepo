@@ -83,9 +83,6 @@ public class ImageLibraryPage extends BasePage {
 		clickElement(imagesAndDocumentsDrpDwn);
 		System.out.println("Verifying  user is in  \"Images And Documents \" Page ");
 		Assert.assertEquals(driver.getTitle(), "Images and Documents");
-		if (NoImagesFoundTxt.isDisplayed()) {
-			Assert.assertEquals(NoImagesFoundTxt.getText(), blankpagetxt);
-		}
 		System.out.println("Select and Upload the Image  ");
 		clickElement(uploadImagesBtn);
 		// waitUntilLoadedAndVisibilityOfElementLocated(uploadBtn);
@@ -180,8 +177,9 @@ public class ImageLibraryPage extends BasePage {
 		clickElement(uploadImagesBtn);
 
 		// waitUntilLoadedAndVisibilityOfElementLocated(uploadBtn);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		clickElement(uploadBtn);
+		Thread.sleep(2000);
 		try {
 			System.out.println("Uploading the Image");
 			upload(imagePath);

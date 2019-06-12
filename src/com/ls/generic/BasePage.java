@@ -31,13 +31,12 @@ public class BasePage {
 
 	/* To click on the required element */
 	public void clickElement(WebElement element) {
-		System.out.println("Clicking on " + element);
 		element.click();
 	}
 
 	/* To enter Required String in the textbox */
 	public void typeText(WebElement element, String string) {
-		System.out.println(" Entering " + string + " in " + element);
+		System.out.println(" Entering " + string);
 		element.sendKeys(string);
 	}
 
@@ -121,7 +120,7 @@ public class BasePage {
 	/* waiting for Element Until Loaded And Visibility Of Element Located */
 	public void waitUntilLoadedAndVisibilityOfElementLocated(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 15);
-		System.out.println("Waiting until " + element + "get Loaded and  Visible ");
+		System.out.println("Waiting until get Loaded and  Visible ");
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 

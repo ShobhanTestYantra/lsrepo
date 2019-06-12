@@ -11,10 +11,16 @@ public class TC_013 extends BaseTest {
 	
 	@Test
 	public void uploadImageToFolderTest() throws InterruptedException {
+		
+		/* login to the application */
 		LoginPage l1 = new LoginPage(driver);
 		l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
+
+		/* Go to the Content Tab */
+		l1.hoverToContent();
+		
+		/* Create the new folder and upload the image */
 		ImageLibraryPage i1 = new ImageLibraryPage(driver);
-		i1.hoverToContent();
 		i1.createFolderUploadImage();
 	}
 }

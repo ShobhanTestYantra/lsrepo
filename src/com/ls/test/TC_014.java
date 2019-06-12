@@ -11,9 +11,15 @@ public class TC_014 extends BaseTest {
 
 	@Test
 	public void uploadImageToFolderTest() throws InterruptedException {
+
+		/* login to the application */
 		LoginPage l1 = new LoginPage(driver);
 		l1.testLogin(UtilityConstants.ADMIN_UN, UtilityConstants.ADMIN_PWD);
-		l1.hoverToLeads();
+
+		/* Go to the Content Tab */
+		l1.hoverToContent();
+
+		/* creating quick Lead */
 		ManageLeadsPage m1 = new ManageLeadsPage(driver);
 		m1.quickAddLead();
 	}

@@ -76,7 +76,7 @@ public class BaseTest {
 	}
 	
 	/**
-	 * <h1>Closing the Browser </h1>
+	 * <h1>Closing the Browser qq</h1>
 	 * @author ShobhanKS
 	 */
 	@AfterMethod
